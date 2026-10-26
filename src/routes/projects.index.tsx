@@ -8,7 +8,7 @@ import { Container, PageHero } from "@/components/site/ui";
 export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
-      { title: "Projects — Ebtisam Alshiyamy · Industrial and Systems Engineering" },
+      { title: "Projects — Ebtisam Alshiyamy · Industrial & Systems Engineering" },
       {
         name: "description",
         content:

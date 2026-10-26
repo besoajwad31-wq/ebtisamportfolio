@@ -10,17 +10,17 @@ import { Container, Eyebrow, PageHero, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Ebtisam Alshiyamy · Industrial and Systems Engineering" },
+      { title: "About — Ebtisam Alshiyamy · Industrial & Systems Engineering" },
       {
         name: "description",
         content:
-          "About Ebtisam Alshiyamy, a third-year Industrial and Systems Engineering student at the University of Jeddah: education, skills and interests.",
+          "About Ebtisam Alshiyamy, a third-year Industrial & Systems Engineering student at the University of Jeddah: education, skills and interests.",
       },
       { property: "og:title", content: "About Ebtisam Alshiyamy" },
       {
         property: "og:description",
         content:
-          "Third-year Industrial and Systems Engineering student at the University of Jeddah with an interest in analytical thinking and engineering design.",
+          "Third-year Industrial & Systems Engineering student at the University of Jeddah with an interest in analytical thinking and engineering design.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },

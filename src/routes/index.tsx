@@ -14,17 +14,17 @@ import fanGrillePhoto from "@/assets/fan-grille-photo.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ebtisam Alshiyamy — Industrial and Systems Engineering Student" },
+      { title: "Ebtisam Alshiyamy — Industrial & Systems Engineering Student" },
       {
         name: "description",
         content:
-          "Ebtisam Alshiyamy is a third-year Industrial and Systems Engineering student at the University of Jeddah. Explore her CAD, design and quality projects.",
+          "Ebtisam Alshiyamy is a third-year Industrial & Systems Engineering student at the University of Jeddah. Explore engineering design, data analysis and structured problem-solving projects.",
       },
-      { property: "og:title", content: "Ebtisam Alshiyamy — Industrial and Systems Engineering Student" },
+      { property: "og:title", content: "Ebtisam Alshiyamy — Industrial & Systems Engineering Student" },
       {
         property: "og:description",
         content:
-          "Analytical problem-solving and engineering design — university projects by Ebtisam Alshiyamy, University of Jeddah.",
+          "Industrial & Systems Engineering, analytical problem-solving and an interest in management consulting — projects by Ebtisam Alshiyamy, University of Jeddah.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -51,7 +51,7 @@ function HomePage() {
               eyebrow="Selected Work"
               title={
                 <>
-                  Projects built on <em className="text-primary">curiosity</em> and careful study.
+                  Projects that turn <em className="text-primary">questions</em> into structured solutions.
                 </>
               }
             />
@@ -77,7 +77,7 @@ function HomePage() {
               eyebrow="Toolkit"
               title={
                 <>
-                  Tools for <em className="text-primary">modeling,</em> measuring and making sense of data.
+                  Tools for <em className="text-primary">analyzing,</em> improving and making sense of systems.
                 </>
               }
             >
@@ -195,7 +195,7 @@ function Hero() {
             className="animate-rise mt-8 max-w-xl font-display text-2xl leading-snug text-foreground/90 md:text-3xl"
             style={{ animationDelay: "220ms" }}
           >
-            An {profile.major} student who enjoys understanding how things work — and how they could work better.
+            An {profile.major} student interested in how people, processes and data come together to solve problems.
           </p>
           <p
             className="animate-rise prose-editorial mt-6 max-w-lg text-muted-foreground"
@@ -220,8 +220,8 @@ function Hero() {
             style={{ animationDelay: "520ms" }}
           >
             {[
-              ["Major", "Industrial & System Eng."],
-              ["Level", "Third year"],
+              ["Major", "Industrial & Systems Eng."],
+              ["Focus", "Systems & problem-solving"],
               ["GPA", profile.gpa],
             ].map(([k, v]) => (
               <div key={k} className="pr-4">
