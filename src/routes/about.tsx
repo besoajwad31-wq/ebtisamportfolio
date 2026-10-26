@@ -82,28 +82,14 @@ function AboutPage() {
               </p>
               <div className="prose-editorial space-y-6">
                 <p>
-                  I’m drawn to the side of engineering that asks how things work together — how parts,
-                  people and processes form a system, and how that system can be understood, measured
-                  and improved. Studying {profile.major} has given me a strong foundation in analytical
-                  thinking and statistics, and a structured way of approaching problems.
+                  I’m interested in understanding how people, processes and data work together—and how
+                  systems can be measured and improved. My studies help me approach challenges through
+                  analytical thinking, engineering design and structured problem-solving.
                 </p>
                 <p>
-                  My university projects have let me put that foundation into practice. I
-                  reverse-engineered a handheld cooling fan and rebuilt its components from scratch in
-                  Autodesk Inventor, collaborated with a team on the design of a solar-powered phone
-                  case, and researched how quality control supported Toyota’s recovery from a major
-                  recall.
-                </p>
-                <p>
-                  Across this work, I’ve learned that good engineering depends as much on organization,
-                  communication and attention to detail as on technical tools. I enjoy working in a team,
-                  planning carefully and solving problems step by step.
-                </p>
-                <p>
-                  Alongside engineering, I have a genuine interest in creative work, including media
-                  production and voice performance. I’m continuing to develop my technical abilities — in
-                  CAD modeling, data analysis and the engineering design process — and to grow with each
-                  new project.
+                  Through university projects, I have practiced reverse engineering with Autodesk Inventor,
+                  collaborated on a solar-powered phone case concept, and explored quality control through
+                  a Toyota case study. I’m continuing to build my skills in CAD, data analysis and teamwork.
                 </p>
               </div>
               <Link to="/projects" className={`${buttonClass({ variant: "outline" })} mt-4`}>
