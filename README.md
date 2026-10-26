@@ -1,26 +1,41 @@
-# Ebtisamportfolio
+# Ebtisam Alshiyamy — Portfolio
 
-Implement exactly the screenshot and nothing else
+A responsive portfolio for an Industrial and Systems Engineering student at the University of Jeddah, built with React, TanStack Start, TypeScript, Tailwind CSS, and Vite.
 
-This project was built with [Lovable](https://lovable.dev).
+**Live app:** https://ebtisamportfolio.lovable.app  
+**Repository:** https://github.com/besoajwad31-wq/ebtisamportfolio
 
-**Live app**: https://ebtisamportfolio.lovable.app
+## Run locally
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/964b14a9-a9c6-47a3-a428-a1df76f26dfc).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requirements: Node.js and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+## Checks before publishing
+
+```sh
+npm run test
+npm run lint
+npm run build
+```
+
+Resolve any errors before publishing. Confirm the resume link, email, LinkedIn, project descriptions and image assets in the preview. Check desktop and mobile layouts.
+
+## Publish with Lovable + GitHub
+
+1. Open the existing Lovable project and confirm it is connected to this repository.
+2. Review changes on the pull request before merging them into `main`.
+3. Once merged, confirm GitHub has synced the commit and check the Lovable preview.
+4. Use Lovable's **Publish** or **Update** action to deploy the existing project.
+5. Open the public URL in a private/incognito window and test Home, About, Projects, Contact, the resume download, and mobile navigation.
+
+This repository uses Lovable's TanStack Start configuration. Publish through the existing Lovable project unless a separate compatible host has already been configured.
+
+## Accuracy and privacy
+
+- Keep skills aligned with hands-on experience. Excel is currently described as basic; statistics as coursework/learning.
+- Verify the resume PDF and project details before publishing.
+- Never commit access tokens, API keys, or other secrets.
