@@ -26,7 +26,7 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <div className="pt-16">
-      <ContactSection index="—" />
+      <ContactSection index="—" asPage />
     </div>
   );
 }

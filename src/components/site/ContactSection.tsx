@@ -29,16 +29,17 @@ export function CopyEmailButton() {
   );
 }
 
-export function ContactSection({ index = "05" }: { index?: string }) {
+export function ContactSection({ index = "05", asPage = false }: { index?: string; asPage?: boolean }) {
+  const Heading = asPage ? "h1" : "h2";
   return (
     <section className="bg-blueprint relative overflow-hidden border-t border-border py-24 md:py-36">
       <div className="bg-veil pointer-events-none absolute inset-0" aria-hidden="true" />
       <Container className="relative">
         <div className="reveal">
           <Eyebrow index={index}>Contact</Eyebrow>
-          <h2 className="mt-6 max-w-4xl text-5xl leading-[1] md:text-8xl">
+          <Heading className="mt-6 max-w-4xl text-5xl leading-[1] md:text-8xl">
             Let’s start a <em className="text-primary">conversation.</em>
-          </h2>
+          </Heading>
           <p className="prose-editorial mt-8 max-w-xl text-muted-foreground">
             I’m always happy to connect about engineering, university projects or learning
             opportunities. The best way to reach me is by email or LinkedIn.
