@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark, .dark *));
 
 /*
  * Design system — "Drafting Room"
@@ -122,6 +122,55 @@
   --shadow-glow: 0 0 0 1px oklch(0.69 0.105 78 / 45%),
     0 18px 50px -20px oklch(0.69 0.105 78 / 45%);
   --grid-line: oklch(0.24 0.045 157 / 5%);
+}
+
+/* Night mode — deep forest green with ivory text and gold accents */
+.dark {
+  --ink: oklch(0.17 0.03 158);
+  --surface: oklch(0.21 0.032 158);
+  --charcoal: oklch(0.26 0.03 158);
+  --blush: oklch(0.76 0.105 80);
+  --paper: oklch(0.95 0.015 92);
+  --stone: oklch(0.7 0.025 140);
+
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: var(--surface);
+  --card-foreground: var(--paper);
+  --popover: var(--surface);
+  --popover-foreground: var(--paper);
+  --primary: var(--blush);
+  --primary-foreground: var(--ink);
+  --primary-soft: oklch(0.76 0.105 80 / 12%);
+  --secondary: var(--charcoal);
+  --secondary-foreground: var(--paper);
+  --muted: var(--charcoal);
+  --muted-foreground: var(--stone);
+  --accent: oklch(0.76 0.105 80 / 14%);
+  --accent-foreground: var(--blush);
+  --destructive-foreground: var(--paper);
+  --border: oklch(0.95 0.015 92 / 10%);
+  --border-strong: oklch(0.95 0.015 92 / 20%);
+  --input: oklch(0.95 0.015 92 / 14%);
+
+  --chart-1: var(--blush);
+  --chart-3: var(--paper);
+
+  --sidebar-foreground: var(--paper);
+  --sidebar-primary: var(--blush);
+  --sidebar-primary-foreground: var(--ink);
+  --sidebar-accent-foreground: var(--paper);
+
+  --gradient-veil: radial-gradient(
+    ellipse 70% 55% at 75% 20%,
+    oklch(0.76 0.105 80 / 10%),
+    transparent 70%
+  );
+  --shadow-card: 0 1px 0 0 oklch(0.95 0.015 92 / 5%) inset,
+    0 30px 60px -30px oklch(0 0 0 / 60%);
+  --shadow-glow: 0 0 0 1px oklch(0.76 0.105 80 / 40%),
+    0 18px 50px -20px oklch(0.76 0.105 80 / 40%);
+  --grid-line: oklch(0.95 0.015 92 / 4%);
 }
 
 @layer base {
