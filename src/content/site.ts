@@ -4,7 +4,7 @@ import resumeAsset from "@/assets/resume.pdf.asset.json";
  * Single source of truth for personal details.
  * Everything here comes from Ebtisam's resume and the brief she provided.
  */
-export const MAJOR = "Industrial and System Engineering";
+export const MAJOR = "Industrial and Systems Engineering";
 
 export const profile = {
   fullName: "Ebtisam Ajwad Alshiyamy",
@@ -21,7 +21,7 @@ export const profile = {
   linkedinLabel: "linkedin.com/in/ebtisam-alshiyamy",
   location: "Jeddah, Saudi Arabia",
   resumeUrl: resumeAsset.url as string | undefined,
-  languages: ["Arabic", "English"],
+  languages: ["Arabic", "English (Intermediate)"],
 } as const;
 
 export const navLinks = [
@@ -49,13 +49,16 @@ export const technicalSkills: SkillGroup[] = [
     ],
   },
   {
-    title: "Analysis & Statistics",
+    title: "Data & Statistics",
     items: [
       {
-        name: "Minitab",
-        detail: "Statistical analysis, hypothesis testing, probability distributions, data visualization",
+        name: "Statistics coursework",
+        detail: "Learning probability distributions, confidence intervals and hypothesis testing",
       },
-      { name: "Microsoft Excel", detail: "Formulas, pivot tables, charts" },
+      {
+        name: "Microsoft Excel",
+        detail: "Basic familiarity; developing spreadsheet formulas and charts",
+      },
     ],
   },
   {
