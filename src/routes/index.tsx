@@ -14,13 +14,13 @@ import fanGrillePhoto from "@/assets/fan-grille-photo.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ebtisam Alshiyamy — Industrial and System Engineering Student" },
+      { title: "Ebtisam Alshiyamy — Industrial and Systems Engineering Student" },
       {
         name: "description",
         content:
-          "Ebtisam Alshiyamy is a third-year Industrial and System Engineering student at the University of Jeddah. Explore her CAD, design and quality projects.",
+          "Ebtisam Alshiyamy is a third-year Industrial and Systems Engineering student at the University of Jeddah. Explore her CAD, design and quality projects.",
       },
-      { property: "og:title", content: "Ebtisam Alshiyamy — Industrial and System Engineering Student" },
+      { property: "og:title", content: "Ebtisam Alshiyamy — Industrial and Systems Engineering Student" },
       {
         property: "og:description",
         content:
