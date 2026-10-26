@@ -14,8 +14,8 @@ function sourceFiles(dir: string): string[] {
 }
 
 describe("Portfolio content rules", () => {
-  it("names the major exactly 'Industrial and System Engineering'", () => {
-    expect(MAJOR).toBe("Industrial and System Engineering");
+  it("names the major exactly 'Industrial and Systems Engineering'", () => {
+    expect(MAJOR).toBe("Industrial and Systems Engineering");
     expect(profile.major).toBe(MAJOR);
   });
 

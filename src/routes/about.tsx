@@ -10,17 +10,17 @@ import { Container, Eyebrow, PageHero, SectionHeading } from "@/components/site/
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Ebtisam Alshiyamy · Industrial and System Engineering" },
+      { title: "About — Ebtisam Alshiyamy · Industrial and Systems Engineering" },
       {
         name: "description",
         content:
-          "About Ebtisam Alshiyamy, a third-year Industrial and System Engineering student at the University of Jeddah: education, skills and interests.",
+          "About Ebtisam Alshiyamy, a third-year Industrial and Systems Engineering student at the University of Jeddah: education, skills and interests.",
       },
       { property: "og:title", content: "About Ebtisam Alshiyamy" },
       {
         property: "og:description",
         content:
-          "Third-year Industrial and System Engineering student at the University of Jeddah with an interest in analytical thinking and engineering design.",
+          "Third-year Industrial and Systems Engineering student at the University of Jeddah with an interest in analytical thinking and engineering design.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -128,7 +128,7 @@ function AboutPage() {
               </p>
               <p className="prose-editorial mt-6 max-w-2xl text-muted-foreground">
                 Coursework has included Introduction to Engineering (EISE 101) and Introduction to
-                Industrial & System Engineering, where I completed the team projects shown in my
+                Industrial & Systems Engineering, where I completed the team projects shown in my
                 portfolio.
               </p>
             </div>
