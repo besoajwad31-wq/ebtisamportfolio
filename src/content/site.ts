@@ -4,7 +4,7 @@ import resumeAsset from "@/assets/resume.pdf.asset.json";
  * Single source of truth for personal details.
  * Everything here comes from Ebtisam's resume and the brief she provided.
  */
-export const MAJOR = "Industrial and System Engineering";
+export const MAJOR = "Industrial and Systems Engineering";
 
 export const profile = {
   fullName: "Ebtisam Ajwad Alshiyamy",
