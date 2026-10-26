@@ -43,7 +43,7 @@ function HomePage() {
       <Hero />
 
       {/* 01 — Featured projects */}
-      <section className="py-24 md:py-36">
+      <section id="selected-work" className="scroll-mt-20 py-24 md:py-36">
         <Container>
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <SectionHeading
@@ -236,11 +236,7 @@ function Hero() {
       </Container>
 
       <a
-        href="#main-content"
-        onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: window.innerHeight - 40, behavior: "smooth" });
-        }}
+        href="#selected-work"
         className="label-mono absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-muted-foreground hover:text-primary lg:flex"
         aria-label="Scroll to selected work"
       >
