@@ -195,14 +195,13 @@ function Hero() {
             className="animate-rise mt-8 max-w-xl font-display text-2xl leading-snug text-foreground/90 md:text-3xl"
             style={{ animationDelay: "220ms" }}
           >
-            An {profile.major} student interested in how people, processes and data come together to solve problems.
+            {profile.major} student focused on problem-solving, engineering design and improving systems.
           </p>
           <p
             className="animate-rise prose-editorial mt-6 max-w-lg text-muted-foreground"
             style={{ animationDelay: "320ms" }}
           >
-            Third-year at the {profile.university}, with a focus on analytical problem-solving,
-            engineering design and the details that hold a system together.
+            Studying at the {profile.university}. Explore selected coursework and team projects below.
           </p>
           <div
             className="animate-rise mt-10 flex flex-wrap items-center gap-4"
