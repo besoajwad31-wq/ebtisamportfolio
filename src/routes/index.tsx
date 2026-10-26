@@ -178,7 +178,7 @@ function Hero() {
   return (
     <section className="bg-blueprint relative overflow-hidden border-b border-border">
       <div className="bg-veil pointer-events-none absolute inset-0" aria-hidden="true" />
-      <Container className="relative grid min-h-[100svh] items-center gap-14 pb-16 pt-32 lg:grid-cols-[1.15fr_1fr] lg:gap-10 lg:pt-28">
+      <Container className="relative grid min-h-[100svh] items-center lg:min-h-[min(100svh,980px)] gap-14 pb-16 pt-32 lg:grid-cols-[1.15fr_1fr] lg:gap-10 lg:pt-28">
         <div>
           <div className="animate-rise">
             <Eyebrow>Engineering Portfolio</Eyebrow>

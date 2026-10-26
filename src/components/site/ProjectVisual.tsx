@@ -43,7 +43,7 @@ function Hackathon() {
       </g>
       <g className="fill-muted-foreground" fontFamily="var(--font-mono)" fontSize="9" letterSpacing="2">
         <text x="24" y="32">T — 00:00</text>
-        <text x="300" y="282">TEAM · IDEATE · SOLVE</text>
+        <text x="376" y="282" textAnchor="end">TEAM · IDEATE · SOLVE</text>
       </g>
     </svg>
   );

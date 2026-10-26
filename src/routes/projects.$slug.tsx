@@ -96,12 +96,12 @@ function ProjectPage() {
 
       {/* Cover */}
       <Container className="-mt-px pt-14 md:pt-20">
-        <div className="reveal tech-frame overflow-hidden border border-border-strong bg-card shadow-card">
+        <div className="reveal tech-frame mx-auto max-w-4xl overflow-hidden border border-border-strong bg-card shadow-card">
           {p.cover ? (
             <SafeImage
               src={p.cover.src}
               alt={p.cover.alt}
-              className="max-h-[70vh] w-full object-cover"
+              className="aspect-[16/10] w-full object-cover"
               loading="eager"
             />
           ) : p.visual ? (
@@ -110,7 +110,7 @@ function ProjectPage() {
             </div>
           ) : null}
         </div>
-        {p.cover && <p className="label-mono mt-4 text-muted-foreground">{p.cover.caption}</p>}
+        {p.cover && <p className="label-mono mx-auto mt-4 max-w-4xl text-muted-foreground">{p.cover.caption}</p>}
       </Container>
 
       {/* Overview */}
