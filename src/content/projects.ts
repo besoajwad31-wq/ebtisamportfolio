@@ -268,7 +268,7 @@ export const projects: Project[] = [
     title: "Sports Hackathon Participation",
     category: "Hackathon · Teamwork",
     summary:
-      "Working with a team to develop ideas and solve challenges under real time constraints.",
+      "Working with a team to develop ideas and solve challenges under time constraints.",
     context: "Team activity",
     tags: ["Teamwork", "Problem-Solving", "Communication"],
     cover: null,
@@ -276,7 +276,7 @@ export const projects: Project[] = [
     facts: [
       { label: "Role", value: "Participant" },
       { label: "Format", value: "Team hackathon" },
-      { label: "Focus", value: "Sports-related challenges" },
+      { label: "Theme", value: "Sports" },
     ],
     overview: [
       "I participated in a sports hackathon, collaborating with a team to develop ideas and solve challenges under time constraints.",
