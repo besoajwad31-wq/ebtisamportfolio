@@ -65,7 +65,6 @@ export function SiteHeader() {
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
               className="label-mono relative py-2 text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-primary"
-              activeProps={{ "data-status": "active" } as Record<string, string>}
             >
               {l.label}
             </Link>
