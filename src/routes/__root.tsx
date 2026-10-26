@@ -73,12 +73,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#0D0D10" },
-      { title: "Ebtisam Alshiyamy — Industrial and Systems Engineering Portfolio" },
+      { name: "theme-color", content: "#F7F4EA" },
+      { title: "Ebtisam Alshiyamy — Industrial & Systems Engineering Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of Ebtisam Alshiyamy, an Industrial and Systems Engineering student at the University of Jeddah.",
+          "Portfolio of Ebtisam Alshiyamy, an Industrial & Systems Engineering student at the University of Jeddah.",
       },
       { name: "author", content: "Ebtisam Ajwad Alshiyamy" },
       { property: "og:site_name", content: "Ebtisam Alshiyamy" },

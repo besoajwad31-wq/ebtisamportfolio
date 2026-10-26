@@ -314,7 +314,7 @@ export const projects: Project[] = [
       { label: "Type", value: "Research report & case study" },
     ],
     overview: [
-      "This group report explores quality control as a core specialty within Industrial and Systems Engineering — from its evolution beyond final inspection to the statistical tools engineers use to prevent defects at the source.",
+      "This group report explores quality control as a core specialty within Industrial & Systems Engineering — from its evolution beyond final inspection to the statistical tools engineers use to prevent defects at the source.",
       "As a case study, we examined how Toyota responded to the recall of nearly 9 million vehicles in the late 2000s and early 2010s, and how its production system and quality methods supported its recovery.",
     ],
     sections: [
@@ -352,7 +352,7 @@ export const projects: Project[] = [
       {
         title: "Key takeaway",
         body: [
-          "Technical tools alone are not enough: quality depends on a culture of communication, accountability and continuous improvement — a perspective at the heart of Industrial and Systems Engineering.",
+          "Technical tools alone are not enough: quality depends on a culture of communication, accountability and continuous improvement — a perspective at the heart of Industrial & Systems Engineering.",
         ],
       },
     ],

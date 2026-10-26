@@ -5,11 +5,11 @@ import { ContactSection } from "@/components/site/ContactSection";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Ebtisam Alshiyamy · Industrial and Systems Engineering" },
+      { title: "Contact — Ebtisam Alshiyamy · Industrial & Systems Engineering" },
       {
         name: "description",
         content:
-          "Get in touch with Ebtisam Alshiyamy, Industrial and Systems Engineering student in Jeddah, Saudi Arabia, by email or LinkedIn.",
+          "Get in touch with Ebtisam Alshiyamy, Industrial & Systems Engineering student in Jeddah, Saudi Arabia, by email or LinkedIn.",
       },
       { property: "og:title", content: "Contact Ebtisam Alshiyamy" },
       {

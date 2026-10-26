@@ -1,6 +1,6 @@
 # Ebtisam Alshiyamy — Portfolio
 
-A responsive portfolio for an Industrial and Systems Engineering student at the University of Jeddah, built with React, TanStack Start, TypeScript, Tailwind CSS, and Vite.
+A responsive portfolio for an Industrial & Systems Engineering student at the University of Jeddah, built with React, TanStack Start, TypeScript, Tailwind CSS, and Vite.
 
 **Live app:** https://ebtisamportfolio.lovable.app  
 **Repository:** https://github.com/besoajwad31-wq/ebtisamportfolio

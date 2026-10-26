@@ -6,8 +6,8 @@
 
 /*
  * Design system — "Drafting Room"
- * Dark-academia editorial portfolio with technical-drawing details.
- * Palette: near-black, charcoal, dusty pale pink, soft ivory, muted gray.
+ * Editorial engineering portfolio with a warm, consulting-oriented palette.
+ * Palette: forest green, warm ivory, and restrained muted gold.
  * All colors are oklch. Components must use these semantic tokens only.
  */
 
@@ -65,63 +65,63 @@
 :root {
   --radius: 0.25rem;
 
-  /* Core palette */
-  --ink: oklch(0.16 0.006 285.7); /* #0D0D10 near-black */
-  --surface: oklch(0.204 0.01 294.7); /* between ink and charcoal */
-  --charcoal: oklch(0.272 0.011 293.3); /* #27262C */
-  --blush: oklch(0.788 0.05 353.8); /* #D5ADBC dusty pale pink */
-  --paper: oklch(0.956 0.005 345.3); /* #F3EFF1 soft ivory */
-  --stone: oklch(0.64 0.014 305.9); /* muted gray */
+  /* Core palette — forest green, warm ivory, muted gold */
+  --ink: oklch(0.24 0.045 157); /* deep forest green */
+  --surface: oklch(0.985 0.008 92); /* warm near-white */
+  --charcoal: oklch(0.94 0.018 105); /* pale sage-ivory */
+  --blush: oklch(0.69 0.105 78); /* muted brass gold */
+  --paper: oklch(0.975 0.012 92); /* warm ivory */
+  --stone: oklch(0.48 0.025 155); /* muted green-gray */
 
-  --background: var(--ink);
-  --foreground: var(--paper);
+  --background: var(--paper);
+  --foreground: var(--ink);
   --card: var(--surface);
-  --card-foreground: var(--paper);
-  --popover: var(--charcoal);
-  --popover-foreground: var(--paper);
-  --primary: var(--blush);
-  --primary-foreground: var(--ink);
-  --primary-soft: oklch(0.788 0.05 353.8 / 12%);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --primary-soft: oklch(0.24 0.045 157 / 9%);
   --secondary: var(--charcoal);
-  --secondary-foreground: var(--paper);
+  --secondary-foreground: var(--ink);
   --muted: var(--charcoal);
   --muted-foreground: var(--stone);
-  --accent: oklch(0.788 0.05 353.8 / 10%);
-  --accent-foreground: var(--blush);
-  --destructive: oklch(0.65 0.18 22);
+  --accent: oklch(0.69 0.105 78 / 15%);
+  --accent-foreground: oklch(0.52 0.09 75);
+  --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: var(--paper);
-  --border: oklch(0.956 0.005 345.3 / 9%);
-  --border-strong: oklch(0.956 0.005 345.3 / 18%);
-  --input: oklch(0.956 0.005 345.3 / 14%);
+  --border: oklch(0.24 0.045 157 / 12%);
+  --border-strong: oklch(0.24 0.045 157 / 22%);
+  --input: oklch(0.24 0.045 157 / 16%);
   --ring: var(--blush);
 
-  --chart-1: var(--blush);
-  --chart-2: var(--stone);
-  --chart-3: var(--paper);
-  --chart-4: oklch(0.6 0.05 353.8);
-  --chart-5: oklch(0.45 0.03 330);
+  --chart-1: var(--ink);
+  --chart-2: var(--blush);
+  --chart-3: var(--stone);
+  --chart-4: oklch(0.52 0.07 155);
+  --chart-5: oklch(0.68 0.045 90);
 
   --sidebar: var(--surface);
-  --sidebar-foreground: var(--paper);
-  --sidebar-primary: var(--blush);
-  --sidebar-primary-foreground: var(--ink);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--paper);
   --sidebar-accent: var(--charcoal);
-  --sidebar-accent-foreground: var(--paper);
+  --sidebar-accent-foreground: var(--ink);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--blush);
 
   /* Effects */
   --gradient-veil: radial-gradient(
     ellipse 70% 55% at 75% 20%,
-    oklch(0.788 0.05 353.8 / 10%),
+    oklch(0.69 0.105 78 / 12%),
     transparent 70%
   );
   --gradient-fade: linear-gradient(180deg, transparent, var(--ink));
-  --shadow-card: 0 1px 0 0 oklch(0.956 0.005 345.3 / 5%) inset,
-    0 30px 60px -30px oklch(0 0 0 / 70%);
-  --shadow-glow: 0 0 0 1px oklch(0.788 0.05 353.8 / 35%),
-    0 18px 50px -20px oklch(0.788 0.05 353.8 / 35%);
-  --grid-line: oklch(0.956 0.005 345.3 / 3.5%);
+  --shadow-card: 0 1px 0 0 oklch(0.24 0.045 157 / 5%) inset,
+    0 30px 60px -30px oklch(0.24 0.045 157 / 10%);
+  --shadow-glow: 0 0 0 1px oklch(0.69 0.105 78 / 45%),
+    0 18px 50px -20px oklch(0.69 0.105 78 / 45%);
+  --grid-line: oklch(0.24 0.045 157 / 5%);
 }
 
 @layer base {
