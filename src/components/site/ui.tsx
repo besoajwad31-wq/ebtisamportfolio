@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /** Small numbered section eyebrow, e.g. "01 — Selected Work". */
-export function Eyebrow({ index, children }: { index?: string; children: ReactNode }) {
+export function Eyebrow({ index, children }: { index?: string | undefined; children: ReactNode }) {
   return (
     <p className="label-mono flex items-center gap-3 text-primary">
       {index && <span className="text-muted-foreground">{index}</span>}

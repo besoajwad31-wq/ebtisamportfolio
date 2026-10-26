@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "Taking apart an everyday handheld fan to understand its mechanical constraints, then rebuilding its parts from scratch in Autodesk Inventor.",
     context: "University of Jeddah · Course project",
     tags: ["Autodesk Inventor", "3D Modeling", "Technical Drawing"],
-    cover: fanGallery[0],
+    cover: fanGallery[0] ?? null,
     facts: [
       { label: "Institution", value: "University of Jeddah" },
       { label: "Type", value: "Course project" },
@@ -178,7 +178,7 @@ export const projects: Project[] = [
       "A team design project for “Solar Sleeve” — a protective phone case concept that harvests sunlight and charges the phone wirelessly.",
     context: "EISE 101 · Introduction to Engineering · University of Jeddah",
     tags: ["Design Process", "Autodesk Inventor", "TinkerCAD", "Survey Analysis"],
-    cover: solarGallery[0],
+    cover: solarGallery[0] ?? null,
     facts: [
       { label: "Course", value: "EISE 101 — Introduction to Engineering" },
       { label: "Team", value: "5 students" },

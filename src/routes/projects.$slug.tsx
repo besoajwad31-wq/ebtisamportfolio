@@ -48,8 +48,8 @@ export const Route = createFileRoute("/projects/$slug")({
 function ProjectPage() {
   const { project: p } = Route.useLoaderData();
   const idx = projects.findIndex((x) => x.slug === p.slug);
-  const prev = projects[(idx - 1 + projects.length) % projects.length];
-  const next = projects[(idx + 1) % projects.length];
+  const prev = projects[(idx - 1 + projects.length) % projects.length] ?? p;
+  const next = projects[(idx + 1) % projects.length] ?? p;
 
   return (
     <article>
