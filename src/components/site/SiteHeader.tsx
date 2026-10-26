@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 
 import { navLinks, profile } from "@/content/site";
 import { ResumeButton } from "./ResumeButton";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Monogram({ className = "" }: { className?: string }) {
   return (
@@ -70,8 +71,11 @@ export function SiteHeader() {
             </Link>
           ))}
           <ResumeButton size="sm" />
+          <ThemeToggle />
         </nav>
 
+        <div className="flex items-center gap-3 md:hidden">
+        <ThemeToggle />
         <button
           type="button"
           className="grid h-11 w-11 place-items-center rounded-full border border-border-strong text-foreground md:hidden"
@@ -82,6 +86,7 @@ export function SiteHeader() {
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
+        </div>
       </div>
 
       {open && (
