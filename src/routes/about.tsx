@@ -82,14 +82,10 @@ function AboutPage() {
               </p>
               <div className="prose-editorial space-y-6">
                 <p>
-                  I’m interested in understanding how people, processes and data work together—and how
-                  systems can be measured and improved. My studies help me approach challenges through
-                  analytical thinking, engineering design and structured problem-solving.
-                </p>
-                <p>
-                  Through university projects, I have practiced reverse engineering with Autodesk Inventor,
-                  collaborated on a solar-powered phone case concept, and explored quality control through
-                  a Toyota case study. I’m continuing to build my skills in CAD, data analysis and teamwork.
+                  I’m an Industrial &amp; Systems Engineering student at the University of Jeddah,
+                  passionate about problem-solving, engineering design, and data analysis. I enjoy
+                  turning ideas into practical solutions and continuously developing my technical and
+                  analytical skills through projects and collaboration.
                 </p>
               </div>
               <Link to="/projects" className={`${buttonClass({ variant: "outline" })} mt-4`}>
