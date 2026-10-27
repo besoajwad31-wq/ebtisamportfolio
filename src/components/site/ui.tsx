@@ -1,5 +1,30 @@
 import type { ReactNode } from "react";
 
+import type { Emphasis } from "@/content/ui";
+
+/** Mirror a directional icon (arrows) in right-to-left layouts. */
+export const rtlFlip = "rtl:-scale-x-100";
+
+/** Renders a heading phrase with its emphasised part. */
+export function Emph({ text }: { text: Emphasis }) {
+  return (
+    <>
+      {text.lead}
+      <em className="text-primary">{text.em}</em>
+      {text.tail}
+    </>
+  );
+}
+
+/** Keeps numbers, emails and units in left-to-right order inside Arabic text. */
+export function Ltr({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return (
+    <bdi dir="ltr" className={className}>
+      {children}
+    </bdi>
+  );
+}
+
 /** Small numbered section eyebrow, e.g. "01 — Selected Work". */
 export function Eyebrow({ index, children }: { index?: string | undefined; children: ReactNode }) {
   return (

@@ -1,10 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Mail } from "lucide-react";
 
-import { navLinks, profile } from "@/content/site";
+import { navLinks } from "@/content/site";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 import { Monogram } from "./SiteHeader";
+import { Ltr } from "./ui";
 
 export function SiteFooter() {
+  const { t, site } = useI18n();
+  const { profile } = site;
   return (
     <footer className="relative border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
@@ -13,24 +17,24 @@ export function SiteFooter() {
             <div className="flex items-center gap-4">
               <Monogram />
               <div>
-                <p className="font-display text-2xl">{profile.fullName}</p>
+                <p className="font-display text-2xl" lang="en">
+                  {profile.fullName}
+                </p>
                 <p className="label-mono mt-1 text-muted-foreground">
                   {profile.major} · {profile.university}
                 </p>
               </div>
             </div>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Analytical problem-solving, engineering design and a careful eye for detail.
-            </p>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">{t.footer.tagline}</p>
           </div>
 
           <div>
-            <p className="label-mono text-primary">Index</p>
+            <p className="label-mono text-primary">{t.footer.index}</p>
             <ul className="mt-5 space-y-3">
               {navLinks.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                    {l.label}
+                    {t.nav[l.key]}
                   </Link>
                 </li>
               ))}
@@ -38,7 +42,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="label-mono text-primary">Contact</p>
+            <p className="label-mono text-primary">{t.footer.contact}</p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
                 <a
@@ -46,7 +50,7 @@ export function SiteFooter() {
                   className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />
-                  {profile.email}
+                  <Ltr>{profile.email}</Ltr>
                 </a>
               </li>
               <li>
@@ -57,7 +61,7 @@ export function SiteFooter() {
                   className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Linkedin className="h-4 w-4" aria-hidden="true" />
-                  LinkedIn
+                  {t.footer.linkedin}
                 </a>
               </li>
               <li className="text-muted-foreground">{profile.location}</li>
@@ -68,9 +72,11 @@ export function SiteFooter() {
         <div className="rule-tick mt-14" />
         <div className="mt-6 flex flex-col justify-between gap-3 sm:flex-row">
           <p className="label-mono text-muted-foreground">
-            © {new Date().getFullYear()} {profile.shortName}
+            <Ltr>
+              © {new Date().getFullYear()} {profile.shortName}
+            </Ltr>
           </p>
-          <p className="label-mono text-muted-foreground">Jeddah · Saudi Arabia</p>
+          <p className="label-mono text-muted-foreground">{t.footer.place}</p>
         </div>
       </div>
     </footer>

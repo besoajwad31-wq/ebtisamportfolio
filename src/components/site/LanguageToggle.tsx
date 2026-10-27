@@ -1,27 +1,41 @@
-import { useState } from "react";
-import { Languages } from "lucide-react";
-import { applyPortfolioLanguage, getSavedLanguage, type PortfolioLanguage } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n/I18nProvider";
+import type { Locale } from "@/lib/i18n/locale";
+
+/** Language names are shown in their own language, so they are not translated. */
+const OPTIONS: { locale: Locale; label: string; name: string }[] = [
+  { locale: "en", label: "EN", name: "English" },
+  { locale: "ar", label: "عربي", name: "العربية" },
+];
 
 export function LanguageToggle() {
-  const [language, setLanguage] = useState<PortfolioLanguage>(() => getSavedLanguage());
-
-  function toggleLanguage() {
-    const next: PortfolioLanguage = language === "en" ? "ar" : "en";
-    applyPortfolioLanguage(next);
-    setLanguage(next);
-    window.dispatchEvent(new Event("portfolio-language-change"));
-  }
-
+  const { locale, setLocale, t } = useI18n();
   return (
-    <button
-      type="button"
-      onClick={toggleLanguage}
-      className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border-strong px-3 text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
-      aria-label={language === "en" ? "Switch language to Arabic" : "Switch language to English"}
-      title={language === "en" ? "العربية" : "English"}
+    <div
+      role="group"
+      aria-label={t.language.groupLabel}
+      dir="ltr"
+      className="inline-flex h-10 items-center rounded-full border border-border-strong p-1 text-xs"
     >
-      <Languages className="h-4 w-4" aria-hidden="true" />
-      <span>{language === "en" ? "عربي" : "EN"}</span>
-    </button>
+      {OPTIONS.map((o, i) => {
+        const active = o.locale === locale;
+        return (
+          <span key={o.locale} className="flex items-center">
+            {i > 0 && <span className="mx-0.5 h-4 w-px bg-border-strong" aria-hidden="true" />}
+            <button
+              type="button"
+              lang={o.locale}
+              aria-pressed={active}
+              aria-label={o.name}
+              onClick={() => !active && setLocale(o.locale)}
+              className={`h-8 rounded-full px-2.5 font-medium transition-colors ${
+                active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-primary"
+              }`}
+            >
+              {o.label}
+            </button>
+          </span>
+        );
+      })}
+    </div>
   );
 }
