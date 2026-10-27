@@ -29,7 +29,7 @@ const enToAr: Record<string, string> = {
   "Systems & problem-solving":"الأنظمة وحل المشكلات","Scroll":"مرّر للأسفل","Scroll to selected work":"انتقل إلى الأعمال المختارة",
   "Fig. 01 — Front grille":"الشكل 01 — الشبكة الأمامية","Reverse engineering of a handheld cooling fan":"الهندسة العكسية لمروحة تبريد محمولة",
   "Modeled in Autodesk Inventor":"تم النمذجة باستخدام Autodesk Inventor","View study →":"عرض الدراسة ←",
-  "About":"نبذة عني","Systems thinking, ":"التفكير المنظومي، ","with care":"مع الاهتمام"," for the details.":" بالتفاصيل.",
+  "Systems thinking, ":"التفكير المنظومي، ","with care":"مع الاهتمام"," for the details.":" بالتفاصيل.",
   "Profile":"الملف الشخصي","Name":"الاسم","Level":"المستوى الدراسي","Location":"الموقع",
   "Biography":"نبذة شخصية","I’m Ebtisam, a third-year ":"أنا ابتسام، طالبة في السنة الثالثة في تخصص ",
   " student at the ":" في "," in":" في","Saudi Arabia.":"المملكة العربية السعودية.",
@@ -44,7 +44,7 @@ const enToAr: Record<string, string> = {
   "Clear documentation and basic reporting":"التوثيق الواضح وإعداد التقارير الأساسية","Reverse engineering":"الهندسة العكسية",
   "Engineering design process":"عملية التصميم الهندسي","KT decision analysis":"تحليل القرارات بطريقة KT","Affinity diagrams":"مخططات التقارب",
   "Gantt chart planning":"التخطيط بمخطط جانت","Quality control tools":"أدوات ضبط الجودة",
-  "Contact":"تواصل","Let’s start a ":"لنبدأ ","conversation.":"حوارًا.",
+  "Let’s start a ":"لنبدأ ","conversation.":"حوارًا.",
   "I’m always happy to connect about engineering, university projects or learning opportunities. The best way to reach me is by email or LinkedIn.":"يسعدني التواصل بشأن الهندسة أو المشاريع الجامعية أو فرص التعلّم. أفضل طريقة للتواصل معي هي البريد الإلكتروني أو LinkedIn.",
   "Email":"البريد الإلكتروني","LinkedIn":"لينكدإن","Based in":"مقرّي في","Send an email":"إرسال بريد إلكتروني",
   "Analytical problem-solving, engineering design and a careful eye for detail.":"حل المشكلات بطريقة تحليلية، والتصميم الهندسي، والاهتمام بالتفاصيل.",
@@ -71,7 +71,7 @@ const enToAr: Record<string, string> = {
   "Phones often run out of battery in places without electricity — deserts, camping areas and remote locations — and power banks still depend on cables and a power source. Our team set out to design a practical, eco-friendly alternative.":"تنفد بطارية الهواتف في أماكن لا تتوفر فيها الكهرباء مثل الصحاري ومواقع التخييم والمناطق النائية، كما تعتمد الشواحن المتنقلة على الكابلات ومصدر طاقة. لذلك عمل الفريق على تصميم بديل عملي وصديق للبيئة.",
   "The concept, called Solar Sleeve, integrates a flexible solar panel, a lithium-polymer battery, a power management circuit and a wireless charging coil into a single protective phone case.":"تدمج فكرة Solar Sleeve لوحًا شمسيًا مرنًا وبطارية ليثيوم بوليمر ودائرة لإدارة الطاقة وملفًا للشحن اللاسلكي داخل غطاء حماية واحد.",
   "I collaborated with the team on idea development, design planning and evaluating the practical functionality of the design, applying analytical thinking and teamwork throughout the project.":"تعاونت مع الفريق في تطوير الفكرة وتخطيط التصميم وتقييم جدواه العملية، مع تطبيق التفكير التحليلي والعمل الجماعي طوال المشروع.",
-  "Engineering design process":"عملية التصميم الهندسي","Define the problem":"تحديد المشكلة","Generate & select ideas":"توليد الأفكار واختيارها","Plan":"التخطيط","Implement":"التنفيذ","Test & evaluate":"الاختبار والتقييم",
+  "Define the problem":"تحديد المشكلة","Generate & select ideas":"توليد الأفكار واختيارها","Plan":"التخطيط","Implement":"التنفيذ","Test & evaluate":"الاختبار والتقييم",
   "Limitations & recommendations":"القيود والتوصيات","Components & materials":"المكونات والمواد","Testing results":"نتائج الاختبار",
   "Sports Hackathon Participation":"المشاركة في هاكاثون رياضي","Hackathon · Teamwork":"هاكاثون · عمل جماعي",
   "Working with a team to develop ideas and solve challenges under time constraints.":"العمل مع فريق لتطوير الأفكار وحل التحديات ضمن وقت محدد.",
@@ -90,7 +90,6 @@ const enToAr: Record<string, string> = {
   "Redesigning the accelerator pedal mechanism and adding brake-override systems.":"إعادة تصميم آلية دواسة التسارع وإضافة أنظمة تجاوز الفرامل.",
   "Technical tools alone are not enough: quality depends on a culture of communication, accountability and continuous improvement — a perspective at the heart of Industrial & Systems Engineering.":"لا تكفي الأدوات التقنية وحدها؛ فالجودة تعتمد على ثقافة التواصل والمساءلة والتحسين المستمر، وهي مبادئ جوهرية في الهندسة الصناعية والنظم.",
   "Photos and further details from the hackathon will be added here.":"ستُضاف الصور والتفاصيل الإضافية عن الهاكاثون هنا.",
-  "Analytical problem-solving, engineering design and a careful eye for detail.":"حل المشكلات تحليليًا، والتصميم الهندسي، والاهتمام بالتفاصيل."
 };
 
 const arToEn = Object.fromEntries(Object.entries(enToAr).map(([en, ar]) => [ar, en])) as Record<string, string>;
