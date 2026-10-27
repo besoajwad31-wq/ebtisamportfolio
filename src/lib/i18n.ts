@@ -92,7 +92,8 @@ const enToAr: Record<string, string> = {
   "Photos and further details from the hackathon will be added here.":"ستُضاف الصور والتفاصيل الإضافية عن الهاكاثون هنا.",
 };
 
-const arToEn = Object.fromEntries(Object.entries(enToAr).map(([en, ar]) => [ar, en])) as Record<string, string>;
+const normalizedEnToAr = Object.fromEntries(Object.entries(enToAr).map(([en, ar]) => [en.trim(), ar.trim()])) as Record<string, string>;
+const arToEn = Object.fromEntries(Object.entries(enToAr).map(([en, ar]) => [ar.trim(), en.trim()])) as Record<string, string>;
 
 export function getSavedLanguage(): PortfolioLanguage {
   try {
@@ -113,7 +114,7 @@ export function applyPortfolioLanguage(language: PortfolioLanguage) {
 
 export function translatePage(language: PortfolioLanguage, root: ParentNode = document.body) {
   if (!root) return;
-  const map = language === "ar" ? enToAr : arToEn;
+  const map = language === "ar" ? normalizedEnToAr : arToEn;
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   const nodes: Text[] = [];
   while (walker.nextNode()) nodes.push(walker.currentNode as Text);
