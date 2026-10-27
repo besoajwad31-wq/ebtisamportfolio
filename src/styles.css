@@ -361,7 +361,6 @@
 
 
 /* Arabic localization */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 html[dir="rtl"] body { font-family: "Noto Sans Arabic", "Jost", sans-serif; }
 html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 { font-family: "Noto Sans Arabic", sans-serif; letter-spacing: 0; line-height: 1.35; }
 html[dir="rtl"] .label-mono { font-family: "Noto Sans Arabic", sans-serif; letter-spacing: 0; text-transform: none; }
