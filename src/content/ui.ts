@@ -1,0 +1,391 @@
+import type { Locale } from "@/lib/i18n/locale";
+
+/**
+ * Interface copy (navigation, headings, buttons, labels, metadata) in English
+ * and Arabic. `UiStrings` is derived from the English dictionary, so the
+ * Arabic dictionary must provide every key or the build fails.
+ * Facts (names, GPA, dates, projects) live in site.ts / projects*.ts.
+ */
+
+/** A heading with one emphasised phrase, rendered as lead + <em> + tail. */
+export type Emphasis = { lead: string; em: string; tail: string };
+
+const en = {
+  nav: {
+    home: "Home",
+    about: "About",
+    projects: "Projects",
+    contact: "Contact",
+    mainLabel: "Main",
+    mobileLabel: "Mobile",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    homeLabel: (name: string) => `${name} — home`,
+  },
+  a11y: { skipToContent: "Skip to content" },
+  language: { groupLabel: "Language" },
+  theme: {
+    toDay: "Switch to day mode",
+    toNight: "Switch to night mode",
+    day: "Day mode",
+    night: "Night mode",
+  },
+  resume: {
+    view: "View Resume",
+    opensPdf: "PDF, opens in a new tab",
+    comingSoon: "Resume coming soon",
+  },
+  notFound: {
+    eyebrow: "Sheet not found",
+    body: "This page doesn’t exist or has been moved.",
+    back: "Back to home",
+  },
+  error: {
+    title: "This page didn’t load",
+    body: "Something went wrong. You can try again or head back home.",
+    retry: "Try again",
+    home: "Go home",
+  },
+  footer: {
+    tagline: "Analytical problem-solving, engineering design and a careful eye for detail.",
+    index: "Index",
+    contact: "Contact",
+    linkedin: "LinkedIn",
+    place: "Jeddah · Saudi Arabia",
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: { lead: "Let’s start a ", em: "conversation.", tail: "" } as Emphasis,
+    body: "I’m always happy to connect about engineering, university projects or learning opportunities. The best way to reach me is by email or LinkedIn.",
+    email: "Email",
+    linkedin: "LinkedIn",
+    basedIn: "Based in",
+    send: "Send an email",
+    copy: "Copy email",
+    copied: "Copied",
+  },
+  home: {
+    heroEyebrow: "Engineering Portfolio",
+    heroTagline: (major: string) =>
+      `${major} student focused on problem-solving, engineering design and improving systems.`,
+    heroStudying: (university: string) =>
+      `Studying at the ${university}. Explore selected coursework and team projects below.`,
+    explore: "Explore projects",
+    statMajor: "Major",
+    statFocus: "Focus",
+    statFocusValue: "Systems & problem-solving",
+    statGpa: "GPA",
+    scroll: "Scroll",
+    scrollLabel: "Scroll to selected work",
+    figureAlt: "Pink radial front grille from the reverse-engineered handheld cooling fan",
+    figureLabel: "Fig. 01 — Front grille",
+    figureTitle: "Reverse engineering of a handheld cooling fan",
+    figureModeled: "Modeled in Autodesk Inventor",
+    figureLink: "View study",
+    selectedEyebrow: "Selected Work",
+    selectedTitle: { lead: "Projects that turn ", em: "questions", tail: " into structured solutions." } as Emphasis,
+    allProjects: "All projects",
+    toolkitEyebrow: "Toolkit",
+    toolkitTitle: { lead: "Tools for ", em: "analyzing,", tail: " improving and making sense of systems." } as Emphasis,
+    toolkitBody: "The software and methods I use across my coursework and projects.",
+    toolkitMore: "Full skills on About",
+    educationEyebrow: "Education",
+    degree: (major: string) => `Bachelor of ${major}`,
+    currentYear: "Currently in third year",
+    cumulativeGpa: "Cumulative GPA",
+    outOf: "out of 5.0",
+    activitiesEyebrow: "Activities",
+    hackathonTitle: "Sports Hackathon",
+    hackathonRole: "Participant",
+    hackathonBody: "Collaborated with a team to develop ideas and solve challenges under time constraints.",
+    readMore: "Read more",
+    languages: "Languages",
+    strengths: "Strengths",
+  },
+  about: {
+    eyebrow: "About",
+    title: { lead: "Systems thinking, ", em: "with care", tail: " for the details." } as Emphasis,
+    profile: "Profile",
+    name: "Name",
+    major: "Major",
+    university: "University",
+    level: "Level",
+    gpa: "GPA",
+    location: "Location",
+    languages: "Languages",
+    bioEyebrow: "Biography",
+    bioLead: (major: string, university: string, country: string) =>
+      `I’m Ebtisam, a third-year ${major} student at the ${university} in ${country}.`,
+    bioBody:
+      "I’m an Industrial & Systems Engineering student at the University of Jeddah, passionate about problem-solving, engineering design, and data analysis. I enjoy turning ideas into practical solutions and continuously developing my technical and analytical skills through projects and collaboration.",
+    seeProjects: "See my projects",
+    educationEyebrow: "Education",
+    educationTitle: "Academic journey",
+    current: "Currently · 3rd year",
+    degree: (major: string) => `Bachelor of ${major}`,
+    coursework:
+      "Coursework has included Introduction to Engineering (EISE 101) and Introduction to Industrial & Systems Engineering, where I completed the team projects shown in my portfolio.",
+    skillsEyebrow: "Skills",
+    skillsTitle: "Technical skills",
+    methods: "Methods practised in projects",
+    strengths: "Personal strengths",
+  },
+  projectsPage: {
+    eyebrow: "Projects",
+    title: { lead: "Work from the ", em: "drafting table.", tail: "" } as Emphasis,
+    intro:
+      "University projects in reverse engineering, CAD modeling, engineering design and quality — each with a full case study.",
+    index: "Index of works",
+    entries: (count: string) => `${count} entries`,
+  },
+  projectCard: {
+    open: (title: string) => `Open project: ${title}`,
+    figure: (number: string) => `Fig. ${number}`,
+    view: "View case study",
+  },
+  project: {
+    allProjects: "All projects",
+    notFoundEyebrow: "Project not found",
+    notFoundTitle: "This project isn’t here.",
+    overview: "Overview",
+    note: "Note",
+    section: "Section",
+    step: (number: string) => `Step ${number}`,
+    filesEyebrow: "Project files",
+    gallery: "Gallery",
+    tapToEnlarge: "Tap an image to enlarge",
+    skillsApplied: "Skills applied",
+    previous: "Previous",
+    next: "Next",
+    moreProjects: "More projects",
+  },
+  gallery: {
+    enlarge: (caption: string) => `Enlarge image: ${caption}`,
+    close: "Close image",
+  },
+  visuals: {
+    hackathon: "TEAM · IDEATE · SOLVE",
+    quality: "CONTROL CHART · SCHEMATIC",
+  },
+  meta: {
+    siteTitle: "Ebtisam Alshiyamy — Industrial & Systems Engineering Portfolio",
+    siteDescription:
+      "Portfolio of Ebtisam Alshiyamy, an Industrial & Systems Engineering student at the University of Jeddah.",
+    siteName: "Ebtisam Alshiyamy",
+    homeTitle: "Ebtisam Alshiyamy — Industrial & Systems Engineering Student",
+    homeDescription:
+      "Ebtisam Alshiyamy is a third-year Industrial & Systems Engineering student at the University of Jeddah. Explore engineering design, data analysis and structured problem-solving projects.",
+    homeOgDescription:
+      "Industrial & Systems Engineering, analytical problem-solving and an interest in management consulting — projects by Ebtisam Alshiyamy, University of Jeddah.",
+    aboutTitle: "About — Ebtisam Alshiyamy · Industrial & Systems Engineering",
+    aboutDescription:
+      "About Ebtisam Alshiyamy, a third-year Industrial & Systems Engineering student at the University of Jeddah: education, skills and interests.",
+    aboutOgTitle: "About Ebtisam Alshiyamy",
+    aboutOgDescription:
+      "Third-year Industrial & Systems Engineering student at the University of Jeddah with an interest in analytical thinking and engineering design.",
+    projectsTitle: "Projects — Ebtisam Alshiyamy · Industrial & Systems Engineering",
+    projectsDescription:
+      "University projects by Ebtisam Alshiyamy: reverse engineering in Autodesk Inventor, a solar-powered phone case design, a sports hackathon and a quality control case study.",
+    projectsOgTitle: "Projects — Ebtisam Alshiyamy",
+    projectsOgDescription:
+      "Reverse engineering, engineering design and quality projects from the University of Jeddah.",
+    contactTitle: "Contact — Ebtisam Alshiyamy · Industrial & Systems Engineering",
+    contactDescription:
+      "Get in touch with Ebtisam Alshiyamy, Industrial & Systems Engineering student in Jeddah, Saudi Arabia, by email or LinkedIn.",
+    contactOgTitle: "Contact Ebtisam Alshiyamy",
+    contactOgDescription: "Email, LinkedIn and resume for Ebtisam Alshiyamy, University of Jeddah.",
+    projectTitle: (title: string) => `${title} — Ebtisam Alshiyamy`,
+    projectNotFound: "Project not found — Ebtisam Alshiyamy",
+  },
+};
+
+export type UiStrings = typeof en;
+
+const ar: UiStrings = {
+  nav: {
+    home: "الرئيسية",
+    about: "نبذة عني",
+    projects: "المشاريع",
+    contact: "تواصل",
+    mainLabel: "القائمة الرئيسية",
+    mobileLabel: "قائمة الجوال",
+    openMenu: "فتح القائمة",
+    closeMenu: "إغلاق القائمة",
+    homeLabel: (name) => `${name} — الصفحة الرئيسية`,
+  },
+  a11y: { skipToContent: "الانتقال إلى المحتوى" },
+  language: { groupLabel: "اللغة" },
+  theme: {
+    toDay: "التبديل إلى الوضع النهاري",
+    toNight: "التبديل إلى الوضع الليلي",
+    day: "الوضع النهاري",
+    night: "الوضع الليلي",
+  },
+  resume: {
+    view: "عرض السيرة الذاتية",
+    opensPdf: "ملف PDF باللغة الإنجليزية، يُفتح في نافذة جديدة",
+    comingSoon: "السيرة الذاتية قريبًا",
+  },
+  notFound: {
+    eyebrow: "الصفحة غير موجودة",
+    body: "هذه الصفحة غير موجودة أو تم نقلها.",
+    back: "العودة إلى الرئيسية",
+  },
+  error: {
+    title: "تعذّر تحميل الصفحة",
+    body: "حدث خطأ ما. يمكنك المحاولة مرة أخرى أو العودة إلى الصفحة الرئيسية.",
+    retry: "إعادة المحاولة",
+    home: "الصفحة الرئيسية",
+  },
+  footer: {
+    tagline: "حلّ المشكلات بأسلوب تحليلي، والتصميم الهندسي، والعناية الدقيقة بالتفاصيل.",
+    index: "الفهرس",
+    contact: "التواصل",
+    linkedin: "لينكدإن",
+    place: "جدة · المملكة العربية السعودية",
+  },
+  contact: {
+    eyebrow: "تواصل",
+    title: { lead: "لنبدأ ", em: "حوارًا.", tail: "" },
+    body: "يسعدني التواصل بشأن الهندسة أو المشاريع الجامعية أو فرص التعلّم. أفضل وسيلة للتواصل معي هي البريد الإلكتروني أو لينكدإن.",
+    email: "البريد الإلكتروني",
+    linkedin: "لينكدإن",
+    basedIn: "مقيمة في",
+    send: "إرسال بريد إلكتروني",
+    copy: "نسخ البريد",
+    copied: "تم النسخ",
+  },
+  home: {
+    heroEyebrow: "ملف الأعمال الهندسية",
+    heroTagline: (major) =>
+      `طالبة في تخصص ${major}، أهتم بحل المشكلات والتصميم الهندسي وتحسين الأنظمة.`,
+    heroStudying: (university) =>
+      `أدرس في ${university}. استعرض أدناه نماذج مختارة من أعمالي الدراسية ومشاريعي الجماعية.`,
+    explore: "استعرض المشاريع",
+    statMajor: "التخصص",
+    statFocus: "مجال التركيز",
+    statFocusValue: "الأنظمة وحل المشكلات",
+    statGpa: "المعدل التراكمي",
+    scroll: "مرّر للأسفل",
+    scrollLabel: "الانتقال إلى الأعمال المختارة",
+    figureAlt: "الشبكة الأمامية الوردية ذات الأضلاع الشعاعية من مروحة التبريد المحمولة التي خضعت للهندسة العكسية",
+    figureLabel: "الشكل 01 — الشبكة الأمامية",
+    figureTitle: "الهندسة العكسية لمروحة تبريد محمولة",
+    figureModeled: "نُمذجت باستخدام Autodesk Inventor",
+    figureLink: "عرض الدراسة",
+    selectedEyebrow: "أعمال مختارة",
+    selectedTitle: { lead: "مشاريع تحوّل ", em: "الأسئلة", tail: " إلى حلول منظّمة." },
+    allProjects: "جميع المشاريع",
+    toolkitEyebrow: "الأدوات",
+    toolkitTitle: { lead: "أدوات ", em: "لتحليل", tail: " الأنظمة وتحسينها وفهمها." },
+    toolkitBody: "البرامج والأساليب التي أستخدمها في مقرراتي الدراسية ومشاريعي.",
+    toolkitMore: "جميع المهارات في صفحة نبذة عني",
+    educationEyebrow: "التعليم",
+    degree: (major) => `بكالوريوس ${major}`,
+    currentYear: "حاليًا في السنة الثالثة",
+    cumulativeGpa: "المعدل التراكمي",
+    outOf: "من 5.0",
+    activitiesEyebrow: "الأنشطة",
+    hackathonTitle: "هاكاثون رياضي",
+    hackathonRole: "مشاركة",
+    hackathonBody: "تعاونتُ مع فريق لتطوير الأفكار وحل التحديات في وقت محدود.",
+    readMore: "اقرأ المزيد",
+    languages: "اللغات",
+    strengths: "نقاط القوة",
+  },
+  about: {
+    eyebrow: "نبذة عني",
+    title: { lead: "تفكير منظومي، ", em: "وعناية", tail: " بأدق التفاصيل." },
+    profile: "الملف الشخصي",
+    name: "الاسم",
+    major: "التخصص",
+    university: "الجامعة",
+    level: "المستوى الدراسي",
+    gpa: "المعدل التراكمي",
+    location: "الموقع",
+    languages: "اللغات",
+    bioEyebrow: "نبذة شخصية",
+    bioLead: (major, university, country) =>
+      `أنا ابتسام، طالبة في السنة الثالثة بتخصص ${major} في ${university}، ${country}.`,
+    bioBody:
+      "أدرس الهندسة الصناعية وهندسة النظم في جامعة جدة، وأهتم بحل المشكلات والتصميم الهندسي وتحليل البيانات. أستمتع بتحويل الأفكار إلى حلول عملية، وأحرص على تطوير مهاراتي التقنية والتحليلية باستمرار من خلال المشاريع والعمل الجماعي.",
+    seeProjects: "استعرض مشاريعي",
+    educationEyebrow: "التعليم",
+    educationTitle: "المسيرة الأكاديمية",
+    current: "حاليًا · السنة الثالثة",
+    degree: (major) => `بكالوريوس ${major}`,
+    coursework:
+      "شملت مقرراتي الدراسية مقرر «مقدمة في الهندسة» (EISE 101) ومقرر «مقدمة في الهندسة الصناعية وهندسة النظم»، وفيهما أنجزتُ المشاريع الجماعية المعروضة في ملف أعمالي.",
+    skillsEyebrow: "المهارات",
+    skillsTitle: "المهارات التقنية",
+    methods: "أساليب طبّقتها في المشاريع",
+    strengths: "نقاط القوة الشخصية",
+  },
+  projectsPage: {
+    eyebrow: "المشاريع",
+    title: { lead: "أعمال من ", em: "طاولة الرسم الهندسي.", tail: "" },
+    intro:
+      "مشاريع جامعية في الهندسة العكسية والنمذجة بالحاسوب والتصميم الهندسي والجودة، ولكلٍّ منها دراسة حالة كاملة.",
+    index: "فهرس الأعمال",
+    entries: (count) => `${count} مشاريع`,
+  },
+  projectCard: {
+    open: (title) => `فتح المشروع: ${title}`,
+    figure: (number) => `الشكل ${number}`,
+    view: "عرض دراسة الحالة",
+  },
+  project: {
+    allProjects: "جميع المشاريع",
+    notFoundEyebrow: "المشروع غير موجود",
+    notFoundTitle: "هذا المشروع غير متوفر.",
+    overview: "نظرة عامة",
+    note: "ملاحظة",
+    section: "قسم",
+    step: (number) => `الخطوة ${number}`,
+    filesEyebrow: "ملفات المشروع",
+    gallery: "معرض الصور",
+    tapToEnlarge: "اضغط على أي صورة لتكبيرها",
+    skillsApplied: "المهارات المطبّقة",
+    previous: "السابق",
+    next: "التالي",
+    moreProjects: "مشاريع أخرى",
+  },
+  gallery: {
+    enlarge: (caption) => `تكبير الصورة: ${caption}`,
+    close: "إغلاق الصورة",
+  },
+  visuals: {
+    hackathon: "فريق · أفكار · حلول",
+    quality: "خريطة ضبط · مخطط توضيحي",
+  },
+  meta: {
+    siteTitle: "Ebtisam Alshiyamy — ملف أعمال في الهندسة الصناعية وهندسة النظم",
+    siteDescription: "ملف أعمال Ebtisam Alshiyamy، طالبة الهندسة الصناعية وهندسة النظم في جامعة جدة.",
+    siteName: "Ebtisam Alshiyamy",
+    homeTitle: "Ebtisam Alshiyamy — طالبة الهندسة الصناعية وهندسة النظم",
+    homeDescription:
+      "Ebtisam Alshiyamy طالبة في السنة الثالثة بتخصص الهندسة الصناعية وهندسة النظم في جامعة جدة. استعرض مشاريع في التصميم الهندسي وتحليل البيانات وحل المشكلات بأسلوب منظّم.",
+    homeOgDescription:
+      "الهندسة الصناعية وهندسة النظم، وحل المشكلات بأسلوب تحليلي، والاهتمام بالاستشارات الإدارية — مشاريع Ebtisam Alshiyamy، جامعة جدة.",
+    aboutTitle: "نبذة عني — Ebtisam Alshiyamy · الهندسة الصناعية وهندسة النظم",
+    aboutDescription:
+      "نبذة عن Ebtisam Alshiyamy، طالبة في السنة الثالثة بتخصص الهندسة الصناعية وهندسة النظم في جامعة جدة: التعليم والمهارات والاهتمامات.",
+    aboutOgTitle: "نبذة عن Ebtisam Alshiyamy",
+    aboutOgDescription:
+      "طالبة في السنة الثالثة بتخصص الهندسة الصناعية وهندسة النظم في جامعة جدة، تهتم بالتفكير التحليلي والتصميم الهندسي.",
+    projectsTitle: "المشاريع — Ebtisam Alshiyamy · الهندسة الصناعية وهندسة النظم",
+    projectsDescription:
+      "مشاريع جامعية لـ Ebtisam Alshiyamy: الهندسة العكسية باستخدام Autodesk Inventor، وتصميم غطاء هاتف يعمل بالطاقة الشمسية، وهاكاثون رياضي، ودراسة حالة في ضبط الجودة.",
+    projectsOgTitle: "المشاريع — Ebtisam Alshiyamy",
+    projectsOgDescription: "مشاريع في الهندسة العكسية والتصميم الهندسي والجودة من جامعة جدة.",
+    contactTitle: "تواصل — Ebtisam Alshiyamy · الهندسة الصناعية وهندسة النظم",
+    contactDescription:
+      "تواصل مع Ebtisam Alshiyamy، طالبة الهندسة الصناعية وهندسة النظم في جدة بالمملكة العربية السعودية، عبر البريد الإلكتروني أو لينكدإن.",
+    contactOgTitle: "تواصل مع Ebtisam Alshiyamy",
+    contactOgDescription: "البريد الإلكتروني ولينكدإن والسيرة الذاتية لـ Ebtisam Alshiyamy، جامعة جدة.",
+    projectTitle: (title) => `${title} — Ebtisam Alshiyamy`,
+    projectNotFound: "المشروع غير موجود — Ebtisam Alshiyamy",
+  },
+};
+
+export const ui: Record<Locale, UiStrings> = { en, ar };

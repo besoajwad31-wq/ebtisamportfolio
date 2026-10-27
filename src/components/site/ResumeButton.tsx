@@ -1,34 +1,36 @@
 import { FileText } from "lucide-react";
 
-import { profile } from "@/content/site";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 import { buttonClass } from "./buttons";
 
 export function ResumeButton({
   size = "md",
   variant = "outline",
-  label = "View Resume",
+  label,
 }: {
   size?: "sm" | "md";
   variant?: "outline" | "solid";
   label?: string;
 }) {
-  if (!profile.resumeUrl) {
+  const { t, site } = useI18n();
+  const text = label ?? t.resume.view;
+  if (!site.profile.resumeUrl) {
     return (
       <span className={buttonClass({ variant: "outline", size, disabled: true })} aria-disabled="true">
-        Resume coming soon
+        {t.resume.comingSoon}
       </span>
     );
   }
   return (
     <a
-      href={profile.resumeUrl}
+      href={site.profile.resumeUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={buttonClass({ variant, size })}
-      aria-label={`${label} (PDF, opens in a new tab)`}
+      aria-label={`${text} (${t.resume.opensPdf})`}
     >
       <FileText className="h-4 w-4" aria-hidden="true" />
-      {label}
+      {text}
     </a>
   );
 }

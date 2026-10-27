@@ -2,10 +2,12 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 
 import type { ProjectImage } from "@/content/projects";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 import { SafeImage } from "./SafeImage";
 
 /** Gallery figure that opens a full-screen view when tapped. */
 export function GalleryFigure({ image, index }: { image: ProjectImage; index: number }) {
+  const { t } = useI18n();
   return (
     <Dialog.Root>
       <figure className="reveal group">
@@ -13,7 +15,7 @@ export function GalleryFigure({ image, index }: { image: ProjectImage; index: nu
           <button
             type="button"
             className="tech-frame block w-full overflow-hidden border border-border bg-card"
-            aria-label={`Enlarge image: ${image.caption}`}
+            aria-label={t.gallery.enlarge(image.caption)}
           >
             <SafeImage
               src={image.src}
@@ -37,8 +39,8 @@ export function GalleryFigure({ image, index }: { image: ProjectImage; index: nu
           <Dialog.Title className="sr-only">{image.caption}</Dialog.Title>
           <Dialog.Description className="sr-only">{image.alt}</Dialog.Description>
           <Dialog.Close
-            className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-border-strong text-foreground hover:border-primary hover:text-primary"
-            aria-label="Close image"
+            className="absolute end-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-border-strong text-foreground hover:border-primary hover:text-primary"
+            aria-label={t.gallery.close}
           >
             <X className="h-5 w-5" />
           </Dialog.Close>

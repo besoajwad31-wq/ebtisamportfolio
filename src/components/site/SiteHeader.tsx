@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { navLinks, profile } from "@/content/site";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 import { ResumeButton } from "./ResumeButton";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
@@ -21,6 +22,7 @@ export function Monogram({ className = "" }: { className?: string }) {
 }
 
 export function SiteHeader() {
+  const { t, site } = useI18n();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -46,21 +48,23 @@ export function SiteHeader() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-6 md:px-10">
         <Link
           to="/"
           className="group flex items-center gap-3"
-          aria-label={`${profile.shortName} — home`}
+          aria-label={t.nav.homeLabel(site.profile.shortName)}
           onClick={() => setOpen(false)}
         >
           <Monogram className="transition-colors group-hover:bg-primary-soft" />
           <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-xl tracking-wide">{profile.shortName}</span>
-            <span className="label-mono text-[0.6rem] text-muted-foreground">{profile.major}</span>
+            <span className="font-display text-xl tracking-wide" lang="en">
+              {site.profile.shortName}
+            </span>
+            <span className="label-mono text-[0.6rem] text-muted-foreground">{site.profile.major}</span>
           </span>
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
+        <nav aria-label={t.nav.mainLabel} className="hidden items-center gap-7 lg:gap-9 md:flex">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -68,7 +72,7 @@ export function SiteHeader() {
               activeOptions={{ exact: l.to === "/" }}
               className="label-mono relative py-2 text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-primary"
             >
-              {l.label}
+              {t.nav[l.key]}
             </Link>
           ))}
           <ResumeButton size="sm" />
@@ -76,19 +80,19 @@ export function SiteHeader() {
           <ThemeToggle />
         </nav>
 
-        <div className="flex items-center gap-3 md:hidden">
-        <LanguageToggle />
-        <ThemeToggle />
-        <button
-          type="button"
-          className="grid h-11 w-11 place-items-center rounded-full border border-border-strong text-foreground md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle />
+          <ThemeToggle />
+          <button
+            type="button"
+            className="grid h-11 w-11 place-items-center rounded-full border border-border-strong text-foreground"
+            aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
@@ -97,7 +101,7 @@ export function SiteHeader() {
           id="mobile-menu"
           className="bg-blueprint h-[calc(100dvh-5rem)] border-t border-border bg-background px-6 pb-10 pt-8 md:hidden"
         >
-          <nav aria-label="Mobile" className="flex flex-col">
+          <nav aria-label={t.nav.mobileLabel} className="flex flex-col">
             {navLinks.map((l, i) => (
               <Link
                 key={l.to}
@@ -107,7 +111,7 @@ export function SiteHeader() {
                 className="animate-rise flex items-baseline justify-between border-b border-border py-5 font-display text-4xl text-foreground data-[status=active]:text-primary"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                {l.label}
+                {t.nav[l.key]}
                 <span className="label-mono text-muted-foreground">0{i + 1}</span>
               </Link>
             ))}

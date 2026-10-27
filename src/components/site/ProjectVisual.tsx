@@ -1,3 +1,5 @@
+import { useI18n } from "@/lib/i18n/I18nProvider";
+
 /**
  * Drawn line illustrations used for projects that have no photos yet.
  * They are decorative and clearly schematic, never presented as project output.
@@ -12,6 +14,7 @@ export function ProjectVisual({ kind }: { kind: "hackathon" | "quality" }) {
 }
 
 function Hackathon() {
+  const { t } = useI18n();
   // A stopwatch dial with radial ticks — "challenges under time constraints".
   const ticks = Array.from({ length: 60 }, (_, i) => i);
   return (
@@ -41,15 +44,16 @@ function Hackathon() {
           strokeLinecap="round"
         />
       </g>
-      <g className="fill-muted-foreground" fontFamily="var(--font-mono)" fontSize="9" letterSpacing="2">
+      <g className="fill-muted-foreground" fontFamily="var(--app-font-mono)" fontSize="9" letterSpacing="2">
         <text x="24" y="32">T — 00:00</text>
-        <text x="376" y="282" textAnchor="end">TEAM · IDEATE · SOLVE</text>
+        <text x="376" y="282" textAnchor="end">{t.visuals.hackathon}</text>
       </g>
     </svg>
   );
 }
 
 function Quality() {
+  const { t } = useI18n();
   // A control chart: centre line, upper/lower limits and a process trace.
   const pts = [150, 132, 160, 141, 128, 155, 147, 138, 162, 144, 133, 150, 141, 156, 146];
   const step = 320 / (pts.length - 1);
@@ -67,11 +71,11 @@ function Quality() {
           <circle key={i} cx={40 + i * step} cy={y} r="2.6" fill="currentColor" stroke="none" />
         ))}
       </g>
-      <g className="fill-muted-foreground" fontFamily="var(--font-mono)" fontSize="9" letterSpacing="2">
+      <g className="fill-muted-foreground" fontFamily="var(--app-font-mono)" fontSize="9" letterSpacing="2">
         <text x="300" y="88">UCL</text>
         <text x="300" y="138">CL</text>
         <text x="300" y="212">LCL</text>
-        <text x="40" y="262">CONTROL CHART · SCHEMATIC</text>
+        <text x="40" y="262">{t.visuals.quality}</text>
       </g>
     </svg>
   );
