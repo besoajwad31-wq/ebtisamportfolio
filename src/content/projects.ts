@@ -366,7 +366,3 @@ export const featuredSlugs = [
   "solar-powered-phone-case",
   "sports-hackathon",
 ];
-
-export function getProject(slug: string) {
-  return projects.find((p) => p.slug === slug);
-}
