@@ -20,7 +20,6 @@ export type Profile = {
   university: string;
   country: string;
   level: string;
-  gpa: string;
   email: string;
   linkedin: string;
   linkedinLabel: string;
@@ -39,7 +38,6 @@ export const profile: Profile = {
   university: "University of Jeddah",
   country: "Saudi Arabia",
   level: "Third-year student",
-  gpa: "4.8 / 5.0",
   email: "ealshiyamy@gmail.com",
   linkedin: "https://linkedin.com/in/ebtisam-alshiyamy-5210a1394",
   linkedinLabel: "linkedin.com/in/ebtisam-alshiyamy",
@@ -48,7 +46,7 @@ export const profile: Profile = {
   languages: ["Arabic", "English"],
 };
 
-/** Name, contact details and GPA are shared; only wording is translated. */
+/** Name and contact details are shared; only wording is translated. */
 const profileAr: Profile = {
   ...profile,
   major: MAJOR_AR,

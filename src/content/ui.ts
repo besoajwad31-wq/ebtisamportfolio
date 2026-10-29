@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/i18n/locale";
  * Interface copy (navigation, headings, buttons, labels, metadata) in English
  * and Arabic. `UiStrings` is derived from the English dictionary, so the
  * Arabic dictionary must provide every key or the build fails.
- * Facts (names, GPA, dates, projects) live in site.ts / projects*.ts.
+ * Facts (names, dates, projects) live in site.ts / projects*.ts.
  */
 
 /** A heading with one emphasised phrase, rendered as lead + <em> + tail. */
