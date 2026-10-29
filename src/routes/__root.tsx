@@ -15,7 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { buttonClass } from "@/components/site/buttons";
-import { applyPortfolioLanguage, getSavedLanguage, translatePage } from "@/lib/i18n";
+import { I18nProvider } from "@/lib/i18n/I18nProvider";
 
 function NotFoundComponent() {
   return (
@@ -126,33 +126,9 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
-  useEffect(() => {
-    const syncLanguage = () => applyPortfolioLanguage(getSavedLanguage());
-    syncLanguage();
-    const observer = new MutationObserver((mutations) => {
-      const language = getSavedLanguage();
-      for (const mutation of mutations) {
-        if (mutation.type === "characterData") {
-          translatePage(language, document.body);
-          break;
-        }
-        mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE) {
-            translatePage(language, document.body);
-          }
-        });
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-    window.addEventListener("portfolio-language-change", syncLanguage);
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("portfolio-language-change", syncLanguage);
-    };
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
+      <I18nProvider initialLocale="en">
       <a
         href="#main"
         className="label-mono sr-only z-[80] rounded-full bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
@@ -164,6 +140,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <SiteFooter />
+      </I18nProvider>
     </QueryClientProvider>
   );
 }

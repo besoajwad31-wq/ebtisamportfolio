@@ -123,11 +123,6 @@ function HomePage() {
                     </p>
                     <p className="label-mono mt-6 text-muted-foreground">Currently in third year</p>
                   </div>
-                  <div className="border-t border-border pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
-                    <p className="label-mono text-muted-foreground">Cumulative GPA</p>
-                    <p className="mt-2 font-display text-7xl leading-none text-primary md:text-8xl">4.8</p>
-                    <p className="label-mono mt-2 text-muted-foreground">out of 5.0</p>
-                  </div>
                 </div>
               </div>
             </article>
@@ -215,13 +210,12 @@ function Hero() {
           </div>
 
           <dl
-            className="animate-rise mt-14 grid max-w-xl grid-cols-3 border-t border-border pt-6"
+            className="animate-rise mt-14 grid max-w-xl grid-cols-2 border-t border-border pt-6"
             style={{ animationDelay: "520ms" }}
           >
             {[
               ["Major", "Industrial & Systems Eng."],
               ["Focus", "Systems & problem-solving"],
-              ["GPA", profile.gpa],
             ].map(([k, v]) => (
               <div key={k} className="pr-4">
                 <dt className="label-mono text-muted-foreground">{k}</dt>

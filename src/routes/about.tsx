@@ -58,7 +58,6 @@ function AboutPage() {
                     ["Major", profile.major],
                     ["University", profile.university],
                     ["Level", profile.level],
-                    ["GPA", profile.gpa],
                     ["Location", profile.location],
                     ["Languages", profile.languages.join(" · ")],
                   ].map(([k, v]) => (
@@ -101,7 +100,7 @@ function AboutPage() {
       <section className="border-y border-border bg-card/40 py-24 md:py-32">
         <Container>
           <SectionHeading index="02" eyebrow="Education" title="Academic journey" />
-          <div className="reveal mt-14 grid gap-8 border-t border-border pt-10 md:grid-cols-[200px_1fr_auto]">
+          <div className="reveal mt-14 grid gap-8 border-t border-border pt-10 md:grid-cols-[200px_1fr]">
             <p className="label-mono text-primary">Currently · 3rd year</p>
             <div>
               <h3 className="text-3xl md:text-4xl">Bachelor of {profile.major}</h3>
@@ -113,11 +112,6 @@ function AboutPage() {
                 Industrial & Systems Engineering, where I completed the team projects shown in my
                 portfolio.
               </p>
-            </div>
-            <div className="md:text-right">
-              <p className="label-mono text-muted-foreground">GPA</p>
-              <p className="mt-1 font-display text-6xl text-primary">4.8</p>
-              <p className="label-mono text-muted-foreground">/ 5.0</p>
             </div>
           </div>
         </Container>

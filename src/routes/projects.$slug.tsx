@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { getProject, projects } from "@/content/projects";
+import { projects } from "@/content/projects";
+import { getProject } from "@/content/localized";
 import { buttonClass } from "@/components/site/buttons";
 import { GalleryFigure } from "@/components/site/Lightbox";
 import { ProjectVisual } from "@/components/site/ProjectVisual";
@@ -10,7 +11,7 @@ import { Container, Eyebrow, Tag } from "@/components/site/ui";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
-    const project = getProject(params.slug);
+    const project = getProject(params.slug, "en");
     if (!project) throw notFound();
     return { project };
   },
