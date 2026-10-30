@@ -4,7 +4,6 @@ import type { Locale } from "@/lib/i18n/locale";
 /** Language names are shown in their own language, so they are not translated. */
 const OPTIONS: { locale: Locale; label: string; name: string }[] = [
   { locale: "en", label: "EN", name: "English" },
-  { locale: "ar", label: "عربي", name: "العربية" },
 ];
 
 export function LanguageToggle() {

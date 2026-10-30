@@ -6,6 +6,7 @@ import { navLinks, profile } from "@/content/site";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 import { ResumeButton } from "./ResumeButton";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Monogram({ className = "" }: { className?: string }) {
   return (
@@ -75,10 +76,12 @@ export function SiteHeader() {
             </Link>
           ))}
           <ResumeButton size="sm" />
+          <LanguageToggle />
           <ThemeToggle />
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle />
           <ThemeToggle />
           <button
             type="button"
