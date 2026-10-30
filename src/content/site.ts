@@ -179,3 +179,14 @@ export const siteContent: Record<Locale, SiteContent> = {
     engineeringMethods: engineeringMethodsAr,
   },
 };
+
+/** Completed courses shown under "Relevant Coursework" (names only). */
+export const relevantCoursework = [
+  "Introduction to Industrial & Systems Engineering",
+  "Probability & Statistics for Engineers",
+  "Statistical Methods for Industrial Engineers",
+  "Engineering Economic Analysis",
+  "Engineering Management",
+  "Fundamentals of Engineering Mechanics",
+  "Computer Programming",
+];
