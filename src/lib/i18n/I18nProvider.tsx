@@ -5,7 +5,7 @@ import { getProjects } from "@/content/localized";
 import { siteContent, type SiteContent } from "@/content/site";
 import { ui, type UiStrings } from "@/content/ui";
 import type { Project } from "@/content/projects";
-import { dirFor, persistLocale, readLocaleCookie, readStoredLocale, type Direction, type Locale } from "./locale";
+import { dirFor, persistLocale, type Direction, type Locale } from "./locale";
 
 type I18nValue = {
   locale: Locale;
@@ -39,14 +39,6 @@ export function I18nProvider({ initialLocale, children }: { initialLocale: Local
     },
     [router],
   );
-
-  // Visitors who chose a language on the earlier version only have it in localStorage.
-  useEffect(() => {
-    if (readLocaleCookie(document.cookie)) return;
-    const stored = readStoredLocale();
-    if (stored && stored !== initialLocale) setLocale(stored);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const value = useMemo<I18nValue>(
     () => ({
