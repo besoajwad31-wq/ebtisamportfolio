@@ -373,5 +373,5 @@ html[dir="rtl"] .animate-rise { animation-name: rise-rtl; }
 html[dir="rtl"] .text-right { text-align: right; }
 html[dir="rtl"] .border-l { border-left: 0; border-right-width: 1px; }
 html[dir="rtl"] .pl-10 { padding-left: 0; padding-right: 2.5rem; }
-html[dir="rtl"] .-left-\\[5px\\] { left: auto; right: -5px; }
-html[dir="rtl"] .md\\:border-l { border-left: 0; border-right-width: 1px; }
+html[dir="rtl"] .-left-\[5px\] { left: auto; right: -5px; }
+html[dir="rtl"] .md\:border-l { border-left: 0; border-right-width: 1px; }
