@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import { coreStrengths, engineeringMethods, profile, technicalSkills } from "@/content/site";
+import { coreStrengths, engineeringMethods, profile, technicalSkills, relevantCoursework } from "@/content/site";
 import { buttonClass } from "@/components/site/buttons";
 import { ContactSection } from "@/components/site/ContactSection";
 import { ResumeButton } from "@/components/site/ResumeButton";
@@ -107,11 +107,14 @@ function AboutPage() {
               <p className="mt-3 text-muted-foreground">
                 {profile.university}, {profile.country}
               </p>
-              <p className="prose-editorial mt-6 max-w-2xl text-muted-foreground">
-                Coursework has included Introduction to Engineering (EISE 101) and Introduction to
-                Industrial & Systems Engineering, where I completed the team projects shown in my
-                portfolio.
-              </p>
+              <p className="label-mono mt-8 text-primary">Relevant Coursework</p>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {relevantCoursework.map((c) => (
+                  <li key={c} className="rounded-full border border-border-strong px-4 py-2 text-sm text-muted-foreground">
+                    {c}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>
