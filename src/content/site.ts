@@ -62,6 +62,7 @@ export const navLinks = [
   { to: "/", key: "home" },
   { to: "/about", key: "about" },
   { to: "/projects", key: "projects" },
+  { to: "/activities", key: "activities" },
   { to: "/contact", key: "contact" },
 ] as const;
 
