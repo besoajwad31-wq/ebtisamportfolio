@@ -190,3 +190,27 @@ export const relevantCoursework = [
   "Fundamentals of Engineering Mechanics",
   "Computer Programming",
 ];
+
+export const peerLearning = {
+  title: "Peer Learning & Knowledge Sharing",
+  description:
+    "Created and managed free Telegram study channels, sharing explanations, summaries, and exam-preparation resources to support peer learning through initiative, clear communication, and knowledge transfer.",
+  subscriberLabel: "subscribers",
+  channelLabel: "View channel",
+  channels: [
+    {
+      code: "EISE131",
+      course: "Probability and Statistics for Engineers",
+      resources: "Final-exam study channel",
+      subscribers: 143,
+      url: "https://t.me/statuniofjed",
+    },
+    {
+      code: "EISE232",
+      course: "Engineering Statistics",
+      resources: "Midterm 2 study resources",
+      subscribers: 81,
+      url: "https://t.me/EISE232mid",
+    },
+  ],
+};

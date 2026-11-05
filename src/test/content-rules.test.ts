@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { projects } from "@/content/projects";
-import { MAJOR, profile } from "@/content/site";
+import { MAJOR, profile, peerLearning } from "@/content/site";
 
 function sourceFiles(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
@@ -14,6 +14,18 @@ function sourceFiles(dir: string): string[] {
 }
 
 describe("Portfolio content rules", () => {
+  it("preserves the EISE131 channel and its 143 subscribers", () => {
+    const channel = peerLearning.channels.find((entry) => entry.code === "EISE131");
+    expect(channel?.subscribers).toBe(143);
+    expect(channel?.url).toBe("https://t.me/statuniofjed");
+  });
+
+  it("preserves the EISE232 channel and its 81 subscribers", () => {
+    const channel = peerLearning.channels.find((entry) => entry.code === "EISE232");
+    expect(channel?.subscribers).toBe(81);
+    expect(channel?.url).toBe("https://t.me/EISE232mid");
+  });
+
   it("names the major consistently as 'Industrial & Systems Engineering'", () => {
     expect(MAJOR).toBe("Industrial & Systems Engineering");
     expect(profile.major).toBe(MAJOR);
