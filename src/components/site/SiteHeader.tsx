@@ -63,7 +63,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav aria-label={t.nav.mainLabel} className="hidden items-center gap-7 lg:gap-9 md:flex">
+        <nav aria-label={t.nav.mainLabel} className="hidden items-center gap-7 lg:gap-9 lg:flex">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -78,7 +78,7 @@ export function SiteHeader() {
           <ThemeToggle />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -96,7 +96,7 @@ export function SiteHeader() {
       {open && (
         <div
           id="mobile-menu"
-          className="bg-blueprint h-[calc(100dvh-5rem)] border-t border-border bg-background px-6 pb-10 pt-8 md:hidden"
+          className="bg-blueprint h-[calc(100dvh-5rem)] border-t border-border bg-background px-6 pb-10 pt-8 lg:hidden"
         >
           <nav aria-label={t.nav.mobileLabel} className="flex flex-col">
             {navLinks.map((l, i) => (
