@@ -27,6 +27,8 @@ export type ProjectSection = {
 
 export type Project = {
   slug: string;
+  /** Participation stays accessible at its original URL, outside project listings. */
+  kind?: "activity";
   number: string;
   title: string;
   category: string;
@@ -264,6 +266,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sports-hackathon",
+    kind: "activity",
     number: "03",
     title: "Sports Hackathon Participation",
     category: "Hackathon · Teamwork",
@@ -364,5 +367,8 @@ export const projects: Project[] = [
 export const featuredSlugs = [
   "reverse-engineering-cooling-fan",
   "solar-powered-phone-case",
-  "sports-hackathon",
+  "quality-control-toyota",
 ];
+
+export const projectWork = projects.filter((entry) => entry.kind !== "activity");
+export const activityExperiences = projects.filter((entry) => entry.kind === "activity");

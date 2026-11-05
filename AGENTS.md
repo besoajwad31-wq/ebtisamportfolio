@@ -14,3 +14,5 @@
 - Add a project by appending to `projects` in `src/content/projects.ts`; `/projects/$slug` renders any entry, no new route needed.
 - Project images and the resume PDF are CDN assets referenced via `.asset.json` pointers in `src/assets/`.
 - `src/test/content-rules.test.ts` guards the naming rule for the major; run `bunx vitest run` after copy changes.
+- Classify participation with `kind: "activity"` in the existing content catalog; project listings use `projectWork`, while Activities uses `activityExperiences`, preserving legacy detail URLs.
+- Render activity cards through shared `ActivityEntries` on Home and Activities so the same facts and links stay consistent.

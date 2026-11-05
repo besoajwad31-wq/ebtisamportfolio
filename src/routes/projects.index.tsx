@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { projects } from "@/content/projects";
+import { projectWork } from "@/content/projects";
 import { ContactSection } from "@/components/site/ContactSection";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { Container, PageHero } from "@/components/site/ui";
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/projects/")({
       {
         name: "description",
         content:
-          "University projects by Ebtisam Alshiyamy: reverse engineering in Autodesk Inventor, a solar-powered phone case design, a sports hackathon and a quality control case study.",
+          "University projects by Ebtisam Alshiyamy: reverse engineering in Autodesk Inventor, a solar-powered phone case design and a quality control case study.",
       },
       { property: "og:title", content: "Projects — Ebtisam Alshiyamy" },
       {
@@ -48,10 +48,10 @@ function ProjectsPage() {
         <Container>
           <div className="mb-10 flex items-center justify-between border-b border-border pb-4">
             <p className="label-mono text-muted-foreground">Index of works</p>
-            <p className="label-mono text-primary">{String(projects.length).padStart(2, "0")} entries</p>
+            <p className="label-mono text-primary">{String(projectWork.length).padStart(2, "0")} entries</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {projects.map((p, i) => (
+            {projectWork.map((p, i) => (
               <ProjectCard key={p.slug} project={p} priority={i < 2} />
             ))}
           </div>
