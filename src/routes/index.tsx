@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, GraduationCap, Trophy, Languages, BookOpen } from "lucide-react";
+import { ArrowDown, ArrowRight, GraduationCap, Languages } from "lucide-react";
 
 import { featuredSlugs, projects } from "@/content/projects";
-import { profile, technicalSkills, coreStrengths, peerLearning } from "@/content/site";
+import { profile, technicalSkills, coreStrengths } from "@/content/site";
+import { activitiesContent } from "@/content/activities";
+import { ActivityEntries } from "@/components/site/ActivityEntries";
 import { buttonClass } from "@/components/site/buttons";
 import { ContactSection } from "@/components/site/ContactSection";
 import { ProjectCard } from "@/components/site/ProjectCard";
@@ -128,50 +130,12 @@ function HomePage() {
             </article>
 
             <div className="grid gap-6">
-              <article className="reveal flex flex-col border border-border bg-card p-8 md:p-10">
-                <Eyebrow index="04">Activities</Eyebrow>
-                <Trophy className="mt-8 h-6 w-6 text-primary" aria-hidden="true" />
-                <h3 className="mt-5 text-3xl leading-tight">Sports Hackathon</h3>
-                <p className="label-mono mt-2 text-primary">Participant</p>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Collaborated with a team to develop ideas and solve challenges under time constraints.
-                </p>
-                <Link
-                  to="/projects/$slug"
-                  params={{ slug: "sports-hackathon" }}
-                  className={`${buttonClass({ variant: "ghost", size: "sm" })} mt-6 self-start !px-0`}
-                >
-                  Read more
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </article>
-              <article className="reveal border border-border bg-card p-8 md:p-10">
-                <BookOpen className="h-6 w-6 text-primary" aria-hidden="true" />
-                <h3 className="mt-5 text-3xl leading-tight">{peerLearning.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {peerLearning.description}
-                </p>
-                <ul className="mt-6 space-y-5">
-                  {peerLearning.channels.map((channel) => (
-                    <li key={channel.code} className="border-t border-border pt-5">
-                      <p className="text-sm font-medium">{channel.code} — {channel.course}</p>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                        {channel.resources} · {channel.subscribers} {peerLearning.subscriberLabel}
-                      </p>
-                      <a
-                        href={channel.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${channel.code} — ${peerLearning.channelLabel}`}
-                        className={`${buttonClass({ variant: "ghost", size: "sm" })} mt-2 !px-0`}
-                      >
-                        {peerLearning.channelLabel}
-                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </article>
+              <Eyebrow index="04">{activitiesContent.title}</Eyebrow>
+              <ActivityEntries />
+              <Link to="/activities" className={`${buttonClass({ variant: "ghost", size: "sm" })} justify-self-start !px-0`}>
+                {activitiesContent.moreActivities}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
               <article className="reveal border border-border bg-card p-8 md:p-10">
                 <Languages className="h-6 w-6 text-primary" aria-hidden="true" />
                 <p className="label-mono mt-6 text-muted-foreground">Languages</p>

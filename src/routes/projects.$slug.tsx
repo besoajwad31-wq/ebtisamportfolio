@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { projects } from "@/content/projects";
+import { projectWork } from "@/content/projects";
+import { activitiesContent } from "@/content/activities";
 import { getProject } from "@/content/localized";
 import { buttonClass } from "@/components/site/buttons";
 import { GalleryFigure } from "@/components/site/Lightbox";
@@ -48,9 +49,10 @@ export const Route = createFileRoute("/projects/$slug")({
 
 function ProjectPage() {
   const { project: p } = Route.useLoaderData();
-  const idx = projects.findIndex((x) => x.slug === p.slug);
-  const prev = projects[(idx - 1 + projects.length) % projects.length] ?? p;
-  const next = projects[(idx + 1) % projects.length] ?? p;
+  const isActivity = p.kind === "activity";
+  const idx = projectWork.findIndex((x) => x.slug === p.slug);
+  const prev = projectWork[(idx - 1 + projectWork.length) % projectWork.length] ?? p;
+  const next = projectWork[(idx + 1) % projectWork.length] ?? p;
 
   return (
     <article>
@@ -59,11 +61,11 @@ function ProjectPage() {
         <div className="bg-veil pointer-events-none absolute inset-0" aria-hidden="true" />
         <Container className="relative">
           <Link
-            to="/projects"
+            to={isActivity ? "/activities" : "/projects"}
             className="label-mono animate-rise inline-flex items-center gap-2 text-muted-foreground hover:text-primary"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
-            All projects
+            {isActivity ? activitiesContent.allActivities : "All projects"}
           </Link>
           <div className="animate-rise mt-10" style={{ animationDelay: "80ms" }}>
             <Eyebrow index={`Fig. ${p.number}`}>{p.category}</Eyebrow>
@@ -238,7 +240,7 @@ function ProjectPage() {
       </section>
 
       {/* Prev / next */}
-      <nav aria-label="More projects" className="border-t border-border">
+      {!isActivity && <nav aria-label="More projects" className="border-t border-border">
         <div className="mx-auto grid max-w-7xl md:grid-cols-2">
           <Link
             to="/projects/$slug"
@@ -261,7 +263,7 @@ function ProjectPage() {
             <span className="mt-3 block font-display text-2xl group-hover:text-primary md:text-3xl">{next.title}</span>
           </Link>
         </div>
-      </nav>
+      </nav>}
     </article>
   );
 }

@@ -2,8 +2,8 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { projects } from "@/content/projects";
-import { MAJOR, profile, peerLearning } from "@/content/site";
+import { projects, projectWork, activityExperiences, featuredSlugs } from "@/content/projects";
+import { MAJOR, profile, peerLearning, navLinks } from "@/content/site";
 
 function sourceFiles(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
@@ -14,6 +14,18 @@ function sourceFiles(dir: string): string[] {
 }
 
 describe("Portfolio content rules", () => {
+  it("keeps five destinations in the requested order", () => {
+    expect(navLinks.map((link) => link.to)).toEqual(["/", "/about", "/projects", "/activities", "/contact"]);
+  });
+
+  it("groups hackathon participation under Activities, outside project listings", () => {
+    expect(activityExperiences.map((entry) => entry.slug)).toEqual(["sports-hackathon"]);
+    expect(projectWork.map((entry) => entry.slug)).toEqual([
+      "reverse-engineering-cooling-fan", "solar-powered-phone-case", "quality-control-toyota",
+    ]);
+    expect(featuredSlugs).not.toContain("sports-hackathon");
+    expect(projects.find((entry) => entry.slug === "sports-hackathon")).toBeDefined();
+  });
   it("preserves the EISE131 channel and its 143 subscribers", () => {
     const channel = peerLearning.channels.find((entry) => entry.code === "EISE131");
     expect(channel?.subscribers).toBe(143);
