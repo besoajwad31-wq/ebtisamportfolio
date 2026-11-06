@@ -215,3 +215,53 @@ export const peerLearning = {
     },
   ],
 };
+
+/**
+ * Home landing copy. Home is an overview only: each preview points at the
+ * page that holds the detail, so nothing here repeats a full biography,
+ * project write-up, course list or skills inventory.
+ */
+export const homeLanding = {
+  eyebrow: "Engineering Portfolio",
+  surname: "Alshiyamy",
+  studentLabel: "Student",
+  supportingSentence:
+    "Interested in engineering, structured problem-solving and continuous learning — with a careful eye for how systems actually work.",
+  scroll: "Scroll",
+  indexLabel: "Start here",
+  pagesLabel: "pages",
+  previews: [
+    {
+      index: "01",
+      to: "/about",
+      label: "About",
+      title: "Who I am",
+      text: "Third-year Industrial & Systems Engineering student at the University of Jeddah, interested in problem-solving, engineering design and data analysis.",
+      linkLabel: "More about me",
+    },
+    {
+      index: "02",
+      to: "/projects",
+      label: "Projects",
+      title: "Selected work",
+      text: "Three university projects: reverse engineering a handheld cooling fan, a solar-powered phone case, and a quality control case study.",
+      linkLabel: "See projects",
+    },
+    {
+      index: "03",
+      to: "/activities",
+      label: "Activities",
+      title: "Beyond the coursework",
+      text: "Sports hackathon participation, plus free Telegram study channels I created and managed to support peer learning.",
+      linkLabel: "See activities",
+    },
+    {
+      index: "04",
+      to: "/contact",
+      label: "Contact",
+      title: "Get in touch",
+      text: "Open to conversations about engineering, university projects and learning opportunities — the best way to reach me is email or LinkedIn.",
+      linkLabel: "Contact me",
+    },
+  ],
+} as const;

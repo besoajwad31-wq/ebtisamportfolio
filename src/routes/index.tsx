@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
-import { profile, homeLanding } from "@/content/site";
+import { homeLanding, profile } from "@/content/site";
 import { buttonClass } from "@/components/site/buttons";
 import { Container, Eyebrow } from "@/components/site/ui";
 
@@ -27,31 +27,72 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+/**
+ * Home is an overview only: a compact hero plus one short preview per page.
+ * Biography, education, skills, project write-ups and activity details stay
+ * on their own routes.
+ */
 function HomePage() {
   return (
-    <section className="bg-blueprint relative overflow-hidden border-b border-border">
-      <div className="bg-veil pointer-events-none absolute inset-0" aria-hidden="true" />
-      <Container className="relative flex min-h-[80svh] items-center pb-20 pt-36 md:pb-28 md:pt-44">
-        <div className="max-w-4xl">
-          <div className="animate-rise"><Eyebrow>{homeLanding.eyebrow}</Eyebrow></div>
-          <h1 className="animate-rise mt-8 text-6xl leading-[1] sm:text-7xl lg:text-8xl">
-            {profile.firstName}<br /><em className="text-primary">{homeLanding.surname}</em>
-          </h1>
-          <p className="animate-rise mt-8 max-w-2xl font-display text-2xl leading-snug md:text-3xl">
-            {profile.major} {homeLanding.studentLabel}
-          </p>
-          <p className="animate-rise mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            {homeLanding.supportingSentence}
-          </p>
-          <div className="animate-rise mt-10 flex flex-wrap gap-3">
-            {homeLanding.links.map((link) => (
-              <Link key={link.to} to={link.to} className={buttonClass({ variant: link.to === "/projects" ? "solid" : "outline" })}>
-                {link.label}<ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+    <>
+      <section className="bg-blueprint relative overflow-hidden border-b border-border">
+        <div className="bg-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+        <Container className="relative flex min-h-[72svh] items-center pb-24 pt-40 md:pb-32 md:pt-48">
+          <div className="max-w-3xl">
+            <div className="animate-rise">
+              <Eyebrow>{homeLanding.eyebrow}</Eyebrow>
+            </div>
+            <h1 className="animate-rise mt-8 text-6xl leading-[1] sm:text-7xl lg:text-8xl">
+              {profile.firstName}
+              <br />
+              <em className="text-primary">{homeLanding.surname}</em>
+            </h1>
+            <p className="animate-rise mt-8 font-display text-2xl leading-snug md:text-3xl">
+              {profile.major} {homeLanding.studentLabel}
+            </p>
+            <p className="animate-rise mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              {homeLanding.supportingSentence}
+            </p>
+            <div className="animate-rise mt-12">
+              <a href="#explore" className={`${buttonClass({ variant: "ghost", size: "sm" })} !px-0`}>
+                {homeLanding.scroll}
+                <ArrowDown className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section id="explore" className="py-20 md:py-28">
+        <Container>
+          <div className="mb-10 flex items-center justify-between border-b border-border pb-4">
+            <p className="label-mono text-muted-foreground">{homeLanding.indexLabel}</p>
+            <p className="label-mono text-primary">
+              {String(homeLanding.previews.length).padStart(2, "0")} {homeLanding.pagesLabel}
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {homeLanding.previews.map((preview) => (
+              <article
+                key={preview.to}
+                className="reveal tech-frame flex h-full flex-col border border-border bg-card p-8 shadow-card transition-colors duration-500 hover:border-primary/40 md:p-10"
+              >
+                <Eyebrow index={preview.index}>{preview.label}</Eyebrow>
+                <h2 className="mt-6 text-3xl leading-tight md:text-4xl">{preview.title}</h2>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{preview.text}</p>
+                <Link
+                  to={preview.to}
+                  className={`${buttonClass({ variant: "ghost", size: "sm" })} mt-8 self-start !px-0`}
+                >
+                  {preview.linkLabel}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </article>
             ))}
           </div>
-        </div>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </>
   );
 }

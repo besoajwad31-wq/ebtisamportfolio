@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { projects, projectWork, activityExperiences, featuredSlugs } from "@/content/projects";
-import { MAJOR, profile, peerLearning, navLinks } from "@/content/site";
+import { MAJOR, homeLanding, profile, peerLearning, navLinks } from "@/content/site";
 
 function sourceFiles(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
@@ -36,6 +36,13 @@ describe("Portfolio content rules", () => {
     const channel = peerLearning.channels.find((entry) => entry.code === "EISE232");
     expect(channel?.subscribers).toBe(81);
     expect(channel?.url).toBe("https://t.me/EISE232mid");
+  });
+
+  it("keeps Home an overview linking to the four detail pages in nav order", () => {
+    expect(`${profile.major} ${homeLanding.studentLabel}`).toBe("Industrial & Systems Engineering Student");
+    expect(homeLanding.previews.map((preview) => preview.to)).toEqual([
+      "/about", "/projects", "/activities", "/contact",
+    ]);
   });
 
   it("names the major consistently as 'Industrial & Systems Engineering'", () => {
